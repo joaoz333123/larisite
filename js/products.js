@@ -48,7 +48,7 @@ const products = [
         category: "perfumes",
         badge: "Exclusivo",
         price: 145.00,
-        image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=500&q=80"
+        image: "https://m.media-amazon.com/images/I/61G+yPll+wL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL"
     },
     {
         id: 6,
@@ -57,7 +57,7 @@ const products = [
         category: "perfumes",
         badge: "Feminino",
         price: 160.00,
-        image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=500&q=80"
+        image: "https://parfumneked.hu/parfumneked/wp-content/uploads/2019/12/MASTER-pink-gold.jpg"
     },
     {
         id: 7,
@@ -66,7 +66,7 @@ const products = [
         category: "perfumes",
         badge: "Tendência",
         price: 179.00,
-        image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=500&q=80"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU8Sd9CUk2uefhod_9qwmHfy2DFmL0t1WqHrMl95cPZjHVZxwELfeVwDnV&s=10"
     },
     {
         id: 8,
@@ -75,7 +75,7 @@ const products = [
         category: "perfumes",
         badge: "Masculino",
         price: 460.00,
-        image: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQjyhNA5VGvvAMwHzp41yyhpWyoJdsavJ75RO9tkq4gW4I1k6M5fkOCArzsAaeeBgA0UTVMzmDkysn-OgY"
+        image: "https://cz.diesel.com/dw/image/v2/BBLG_PRD/on/demandware.static/-/Sites-diesel-master-catalog/default/dwcc19b0e9/images/large/PL0633_00PRO_01_E.jpg?q=80"
     },
     {
         id: 9,
@@ -84,7 +84,7 @@ const products = [
         category: "perfumes",
         badge: "Lançamento",
         price: 224.00,
-        image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=500&q=80"
+        image: "https://www.drogasil.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F17031470.webp&w=3840&q=40"
     },
     {
         id: 10,
@@ -93,7 +93,7 @@ const products = [
         category: "perfumes",
         badge: "Árabe",
         price: 220.00,
-        image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=500&q=80"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkdMqK5LJeHbcGkuiWTFG_NmiDeql_AB8xavff-NnqTQ&s=10"
     },
     {
         id: 11,
@@ -102,7 +102,7 @@ const products = [
         category: "sprays",
         badge: "Body Splash",
         price: 78.00,
-        image: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=500&q=80"
+        image: "https://assets.sistemawbuy.com.br/arquivos/2991e0dc262d35f367db71db5650f367/produtos/69b5588751194/15493845138-body-splash-dream-brand-collection-pure-seduction-feminino-250ml-3-69b558901881e.jpg"
     },
     {
         id: 12,
@@ -111,7 +111,7 @@ const products = [
         category: "sprays",
         badge: "Body Spray",
         price: 153.00,
-        image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=500&q=80"
+        image: "https://images.tcdn.com.br/img/img_prod/1351546/perfume_lattafa_ana_abiyedh_rouge_all_over_spray_1_1_20260414182749_f6b3ea638402.png"
     },
     {
         id: 13,
@@ -120,7 +120,7 @@ const products = [
         category: "cremes",
         badge: "Creme Corporal",
         price: 175.00,
-        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80"
+        image: "https://acdn-us.mitiendanube.com/stores/004/134/460/products/copia-de-produtos-site-jc-imports-0bcf9d3503c25b1c6317707343339354-1024-1024.webp"
     },
     {
         id: 14,
@@ -129,6 +129,6 @@ const products = [
         category: "cremes",
         badge: "Hidratante",
         price: 82.00,
-        image: "https://images.unsplash.com/photo-1608248597261-e4d0947726b2?auto=format&fit=crop&w=500&q=80"
+        image: "https://down-br.img.susercontent.com/file/br-11134207-7r98o-lsj9nwp0wnqc17"
     }
 ];
