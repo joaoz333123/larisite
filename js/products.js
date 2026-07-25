@@ -126,7 +126,7 @@ const products = [
         "subtitle": "Inspiração Angel 200ml",
         "category": "cremes",
         "badge": "Hidratante",
-        "price": 82,
+        "price": 79.9,
         "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-lsj9nwp0wnqc17"
     },
     {
@@ -153,7 +153,7 @@ const products = [
         "subtitle": "Frasco 80ml",
         "category": "perfumes",
         "badge": "Árabe Premium",
-        "price": 450,
+        "price": 799.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1029615/17581340559327.jpg?v=638937308597370000"
     },
     {
