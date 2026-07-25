@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LariBiruta Cosméticos | Cianorte - PR</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1c131a',
+                            gold: '#d4af37',
+                            goldHover: '#b89628',
+                            accent: '#f3e8ee',
+                            cardBg: '#ffffff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-dark text-white text-xs md:text-sm py-2 px-4 text-center font-medium tracking-wide flex justify-center items-center gap-2">
+        <i class="fa-solid fa-location-dot text-brand-gold"></i>
+        <span>Loja Física & Online em <strong>Cianorte - PR</strong> | Envio para todo o Brasil</span>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-30 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <a href="#" class="flex flex-col">
+                <span class="text-2xl sm:text-3xl font-extrabold tracking-wider text-brand-dark uppercase">
+                    LariBiruta <span class="text-brand-gold">Cosméticos</span>
+                </span>
+                <span class="text-[10px] text-gray-500 uppercase tracking-widest -mt-1">Perfumaria Importada & Beleza</span>
+            </a>
+
+            <!-- Search Bar (Desktop) -->
+            <div class="hidden md:flex flex-1 max-w-md mx-8 relative">
+                <input type="text" id="searchInput" oninput="filterProducts()" placeholder="Buscar perfume, marca ou hidratante..." 
+                    class="w-full bg-gray-100 border border-transparent rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:border-brand-gold focus:bg-white transition-all">
+                <button class="absolute right-3 top-2.5 text-gray-400 hover:text-brand-gold">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/5544999999999" target="_blank" class="hidden sm:flex items-center gap-2 text-sm text-gray-700 hover:text-green-600 transition">
+                    <i class="fa-brands fa-whatsapp text-lg text-green-500"></i>
+                    <span class="font-medium">Atendimento</span>
+                </a>
+
+                <!-- Cart Button Trigger -->
+                <button onclick="toggleCartModal()" class="relative p-2 text-brand-dark hover:text-brand-gold transition-colors">
+                    <i class="fa-solid fa-bag-shopping text-2xl"></i>
+                    <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-brand-gold text-brand-dark text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">
+                        0
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Bar Mobile -->
+        <div class="md:hidden px-4 pb-3">
+            <div class="relative">
+                <input type="text" id="searchInputMobile" oninput="filterProductsMobile()" placeholder="Buscar produtos..." 
+                    class="w-full bg-gray-100 border border-transparent rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:border-brand-gold">
+                <button class="absolute right-3 top-2.5 text-gray-400">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Hero -->
+    <section class="bg-brand-dark text-white py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10 gap-8">
+            <div class="max-w-xl text-center md:text-left">
+                <span class="inline-block bg-brand-gold/20 text-brand-gold text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+                    Inspirados nas melhores fragrâncias
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-light tracking-tight text-white mb-4">
+                    Catálogo de Luxo em <span class="font-semibold text-brand-gold">Cianorte</span>
+                </h1>
+                <p class="text-gray-300 text-sm sm:text-base mb-6">
+                    Perfumes árabes, fragrâncias importadas e hidratantes corporais selecionados com os melhores preços da região.
+                </p>
+                <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                    <a href="#catalogo" class="bg-brand-gold hover:bg-brand-goldHover text-brand-dark font-bold text-sm px-6 py-3 rounded-md uppercase tracking-wider transition">
+                        Ver Produtos
+                    </a>
+                </div>
+            </div>
+            <div class="flex gap-4 items-center justify-center">
+                <div class="w-32 h-44 sm:w-40 sm:h-56 bg-white/5 rounded-xl border border-white/10 p-2 flex flex-col items-center justify-center text-center">
+                    <i class="fa-solid fa-spray-can-sparkles text-3xl text-brand-gold mb-2"></i>
+                    <span class="text-xs font-medium text-gray-200">Linha Árabe Premium</span>
+                </div>
+                <div class="w-32 h-44 sm:w-40 sm:h-56 bg-white/5 rounded-xl border border-white/10 p-2 flex flex-col items-center justify-center text-center">
+                    <i class="fa-solid fa-gem text-3xl text-brand-gold mb-2"></i>
+                    <span class="text-xs font-medium text-gray-200">Fragrâncias Originais</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 w-full">
+
+        <!-- Category Filter Tabs -->
+        <div class="flex items-center justify-center sm:justify-between border-b border-gray-200 mb-8 overflow-x-auto pb-3 gap-2">
+            <div class="flex gap-2 sm:gap-4 flex-nowrap">
+                <button onclick="setCategory('all')" id="tab-all" class="category-btn active px-4 py-2 text-sm font-semibold rounded-full border border-brand-dark bg-brand-dark text-white transition">
+                    Todos os Produtos
+                </button>
+                <button onclick="setCategory('perfumes')" id="tab-perfumes" class="category-btn px-4 py-2 text-sm font-semibold rounded-full border border-gray-200 bg-white text-gray-600 hover:border-brand-gold transition">
+                    Perfumes
+                </button>
+                <button onclick="setCategory('sprays')" id="tab-sprays" class="category-btn px-4 py-2 text-sm font-semibold rounded-full border border-gray-200 bg-white text-gray-600 hover:border-brand-gold transition">
+                    Body Sprays
+                </button>
+                <button onclick="setCategory('cremes')" id="tab-cremes" class="category-btn px-4 py-2 text-sm font-semibold rounded-full border border-gray-200 bg-white text-gray-600 hover:border-brand-gold transition">
+                    Hidratantes
+                </button>
+            </div>
+            <span id="productCounter" class="hidden sm:inline text-xs text-gray-500 font-medium">Exibindo 14 itens</span>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="productsContainer" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            <!-- JavaScript dynamically renders products here -->
+        </div>
+
+    </main>
+
+    <!-- Shopping Cart Modal (Drawer) -->
+    <div id="cartModal" class="fixed inset-0 bg-black/60 z-50 flex justify-end opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="cartDrawer" class="w-full max-w-md bg-white h-full shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300">
+            <!-- Cart Header -->
+            <div class="p-4 bg-brand-dark text-white flex items-center justify-between border-b border-gray-800">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-brand-gold"></i>
+                    <h2 class="font-bold text-lg">Seu Carrinho</h2>
+                </div>
+                <button onclick="toggleCartModal()" class="text-gray-400 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Cart Items List -->
+            <div id="cartItemsList" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
+                <!-- Cart items rendered by JS -->
+            </div>
+
+            <!-- Cart Footer -->
+            <div class="p-4 border-t border-gray-200 bg-gray-50 space-y-3">
+                <div class="flex justify-between items-center text-sm text-gray-600">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal" class="font-bold text-gray-900 text-base">R$ 0,00</span>
+                </div>
+                <div class="text-xs text-gray-500 flex items-center gap-1">
+                    <i class="fa-solid fa-truck text-brand-gold"></i>
+                    <span>Retirada em Cianorte ou Entrega a combinar</span>
+                </div>
+                <button onclick="checkoutWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition uppercase text-sm tracking-wider">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Finalizar via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-gray-300 mt-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white font-bold text-lg mb-3 tracking-wider uppercase">LariBiruta Cosméticos</h3>
+                <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                    Especialistas em perfumaria fina, decants, fragrâncias árabes e produtos de cuidado corporal. Qualidade, procedência e excelência no atendimento em Cianorte - PR.
+                </p>
+                <div class="flex gap-3 text-brand-gold">
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook text-xl"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-3">Localização & Contato</h4>
+                <ul class="text-xs space-y-2 text-gray-400">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-gold"></i> Cianorte - Paraná (PR)</li>
+                    <li class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-brand-gold"></i> (44) 99999-9999</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-gold"></i> contato@laribirutacosmeticos.com.br</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-3">Formas de Pagamento</h4>
+                <div class="flex flex-wrap gap-2 text-xs text-gray-400">
+                    <span class="bg-white/10 px-2 py-1 rounded">Pix</span>
+                    <span class="bg-white/10 px-2 py-1 rounded">Cartão de Crédito</span>
+                    <span class="bg-white/10 px-2 py-1 rounded">Dinheiro na Entrega</span>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 text-center py-4 text-[11px] text-gray-500">
+            &copy; LariBiruta Cosméticos - Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- JavaScript Data and Application Logic -->
+    <script>
+        // Database of requested products with average market price
+        const products = [
+            {
+                id: 1,
+                name: "Lattafa Yara Candy Eau de Parfum",
+                subtitle: "Miniatura 30ml",
+                category: "perfumes",
+                badge: "Árabe",
+                price: 119.00,
+                image: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1065370/17581344811545.jpg?v=638939092407570000"
+            },
+            {
+                id: 2,
+                name: "Lattafa Fakhar Eau de Parfum",
+                subtitle: "Fakhar Rose 100ml",
+                category: "perfumes",
+                badge: "Mais Vendido",
+                price: 280.00,
+                image: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2646704/17582505965066.jpg?v=639190373067270000"
+            },
+            {
+                id: 3,
+                name: "Sahari Collections Malik Al Sharq",
+                subtitle: "Eau de Parfum 100ml",
+                category: "perfumes",
+                badge: "Árabe Premium",
+                price: 150.00,
+                image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 4,
+                name: "Carolina Herrera 212 VIP Men",
+                subtitle: "Eau de Toilette 100ml",
+                category: "perfumes",
+                badge: "Importado Orig.",
+                price: 680.00,
+                image: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/485803-800-800/212-vip-men-carolina-hererra-100ml--3-.jpg?v=639192909607800000"
+            },
+            {
+                id: 5,
+                name: "Al-A'raaf Asfar Eau de Parfum",
+                subtitle: "Frasco 100ml",
+                category: "perfumes",
+                badge: "Exclusivo",
+                price: 145.00,
+                image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 6,
+                name: "New Brand Master Of Essence",
+                subtitle: "Pink Gold EDP 100ml",
+                category: "perfumes",
+                badge: "Feminino",
+                price: 160.00,
+                image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 7,
+                name: "Pendora Scents Cool Girl",
+                subtitle: "Eau de Parfum 100ml",
+                category: "perfumes",
+                badge: "Tendência",
+                price: 179.00,
+                image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 8,
+                name: "Diesel Fuel For Life Homme",
+                subtitle: "Eau de Toilette",
+                category: "perfumes",
+                badge: "Masculino",
+                price: 460.00,
+                image: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQjyhNA5VGvvAMwHzp41yyhpWyoJdsavJ75RO9tkq4gW4I1k6M5fkOCArzsAaeeBgA0UTVMzmDkysn-OgY"
+            },
+            {
+                id: 9,
+                name: "Lattafa Perfumes Asad Zanzibar",
+                subtitle: "Eau de Parfum 100ml",
+                category: "perfumes",
+                badge: "Lançamento",
+                price: 224.00,
+                image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 10,
+                name: "Sahari Collections Blue Sultan",
+                subtitle: "Eau de Parfum 100ml",
+                category: "perfumes",
+                badge: "Árabe",
+                price: 220.00,
+                image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 11,
+                name: "Dream Brand Body Splash Pure Seduction",
+                subtitle: "Frasco Spray 250ml",
+                category: "sprays",
+                badge: "Body Splash",
+                price: 78.00,
+                image: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 12,
+                name: "Lattafa Ana Abiyedh Rouge",
+                subtitle: "All Over Spray 150ml",
+                category: "sprays",
+                badge: "Body Spray",
+                price: 153.00,
+                image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 13,
+                name: "Beauty Brand Loção Hidratante",
+                subtitle: "Pure Seduction 236ml",
+                category: "cremes",
+                badge: "Creme Corporal",
+                price: 175.00,
+                image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 14,
+                name: "Dream Brand Creme Perfumado",
+                subtitle: "Inspiração Angel 200ml",
+                category: "cremes",
+                badge: "Hidratante",
+                price: 82.00,
+                image: "https://images.unsplash.com/photo-1608248597261-e4d0947726b2?auto=format&fit=crop&w=500&q=80"
+            }
+        ];
+
+        let cart = [];
+        let currentCategory = 'all';
+
+        // Render products on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(products);
+        });
+
+        function renderProducts(items) {
+            const container = document.getElementById('productsContainer');
+            const counter = document.getElementById('productCounter');
+            
+            if (counter) counter.innerText = `Exibindo ${items.length} itens`;
+
+            if (items.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-gray-500">
+                        <i class="fa-solid fa-box-open text-4xl mb-2 text-gray-300"></i>
+                        <p>Nenhum produto encontrado.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = items.map(item => `
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden flex flex-col justify-between transition group">
+                    <div>
+                        <!-- Product Image Box -->
+                        <div class="relative bg-gray-50 aspect-square p-4 flex items-center justify-center overflow-hidden">
+                            <span class="absolute top-2 left-2 bg-brand-dark/90 text-brand-gold text-[10px] font-bold uppercase px-2 py-0.5 rounded tracking-wider">
+                                ${item.badge}
+                            </span>
+                            <img src="${item.image}" alt="${item.name}" 
+                                class="object-contain h-full w-full group-hover:scale-105 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(item.name)}';">
+                        </div>
+                        
+                        <!-- Product Details -->
+                        <div class="p-3 sm:p-4">
+                            <span class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider block mb-1">
+                                ${item.category === 'perfumes' ? 'Perfume' : item.category === 'sprays' ? 'Body Spray' : 'Hidratante'}
+                            </span>
+                            <h3 class="font-bold text-gray-800 text-xs sm:text-sm line-clamp-2 leading-snug mb-1">
+                                ${item.name}
+                            </h3>
+                            <p class="text-xs text-gray-500 mb-3">${item.subtitle}</p>
+                        </div>
+                    </div>
+
+                    <!-- Price & Action -->
+                    <div class="p-3 sm:p-4 pt-0">
+                        <div class="text-brand-dark font-extrabold text-sm sm:text-base mb-2">
+                            R$ ${item.price.toFixed(2).replace('.', ',')}
+                        </div>
+                        <button onclick="addToCart(${item.id})" class="w-full bg-brand-dark hover:bg-brand-gold hover:text-brand-dark text-white font-semibold py-2 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5 uppercase">
+                            <i class="fa-solid fa-plus text-[10px]"></i> Adicionar
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function setCategory(category) {
+            currentCategory = category;
+            
+            // Update Active Buttons
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-dark', 'text-white', 'border-brand-dark');
+                btn.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+            });
+            
+            const activeBtn = document.getElementById(`tab-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
+                activeBtn.classList.add('bg-brand-dark', 'text-white', 'border-brand-dark');
+            }
+
+            filterProducts();
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            
+            let filtered = products;
+            
+            if (currentCategory !== 'all') {
+                filtered = filtered.filter(p => p.category === currentCategory);
+            }
+
+            if (query.trim() !== "") {
+                filtered = filtered.filter(p => 
+                    p.name.toLowerCase().includes(query) || 
+                    p.subtitle.toLowerCase().includes(query)
+                );
+            }
+
+            renderProducts(filtered);
+        }
+
+        function filterProductsMobile() {
+            document.getElementById('searchInput').value = document.getElementById('searchInputMobile').value;
+            filterProducts();
+        }
+
+        // Cart Actions
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            const existing = cart.find(item => item.id === id);
+
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+            toggleCartModal(true);
+        }
+
+        function updateQuantity(id, change) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== id);
+                }
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartList = document.getElementById('cartItemsList');
+            const subtotalEl = document.getElementById('cartSubtotal');
+            const badge = document.getElementById('cartCountBadge');
+
+            const totalItems = cart.reduce((acc, i) => acc + i.quantity, 0);
+            const subtotal = cart.reduce((acc, i) => acc + (i.price * i.quantity), 0);
+
+            if (totalItems > 0) {
+                badge.innerText = totalItems;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            subtotalEl.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+
+            if (cart.length === 0) {
+                cartList.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-center text-gray-400 py-12">
+                        <i class="fa-solid fa-bag-shopping text-5xl mb-3 text-gray-200"></i>
+                        <p class="text-sm">Seu carrinho está vazio.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            cartList.innerHTML = cart.map(item => `
+                <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
+                    <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-contain bg-white rounded p-1">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="text-xs font-bold text-gray-800 truncate">${item.name}</h4>
+                        <span class="text-xs text-brand-dark font-semibold">R$ ${item.price.toFixed(2).replace('.', ',')}</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white border border-gray-200 rounded px-2 py-1">
+                        <button onclick="updateQuantity(${item.id}, -1)" class="text-xs text-gray-500 hover:text-red-500 font-bold px-1">-</button>
+                        <span class="text-xs font-bold w-4 text-center">${item.quantity}</span>
+                        <button onclick="updateQuantity(${item.id}, 1)" class="text-xs text-gray-500 hover:text-green-600 font-bold px-1">+</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleCartModal(forceOpen = false) {
+            const modal = document.getElementById('cartModal');
+            const drawer = document.getElementById('cartDrawer');
+
+            if (forceOpen || modal.classList.contains('opacity-0')) {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                drawer.classList.remove('translate-x-full');
+            } else {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                drawer.classList.add('translate-x-full');
+            }
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert('Seu carrinho está vazio.');
+                return;
+            }
+
+            let message = "Olá LariBiruta Cosméticos! Gostaria de fazer o pedido abaixo:\n\n";
+            let total = 0;
+
+            cart.forEach(item => {
+                const sub = item.price * item.quantity;
+                total += sub;
+                message += `• ${item.quantity}x ${item.name} (${item.subtitle}) - R$ ${sub.toFixed(2).replace('.', ',')}\n`;
+            });
+
+            message += `\n*Total do Pedido: R$ ${total.toFixed(2).replace('.', ',')}*`;
+            message += `\n\n📍 Local de Entrega / Retirada: Cianorte - PR`;
+
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/5544999999999?text=${encoded}`, '_blank');
+        }
+    </script>
+</body>
+</html>
