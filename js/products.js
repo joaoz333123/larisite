@@ -48,7 +48,7 @@ const products = [
         category: "perfumes",
         badge: "Exclusivo",
         price: 145.00,
-        image: "https://m.media-amazon.com/images/I/61G+yPll+wL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL"
+        image: "https://www.lgimportados.com/produtos_img/9/0/0/1/5/7/IMG_900157_3.JPG"
     },
     {
         id: 6,
