@@ -36,7 +36,7 @@ const products = [
         "subtitle": "Eau de Toilette 100ml",
         "category": "perfumes",
         "badge": "Importado Orig.",
-        "price": 680,
+        "price": 599.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/485803-800-800/212-vip-men-carolina-hererra-100ml--3-.jpg?v=639192909607800000"
     },
     {
@@ -54,7 +54,7 @@ const products = [
         "subtitle": "Pink Gold EDP 100ml",
         "category": "perfumes",
         "badge": "Feminino",
-        "price": 160,
+        "price": 129.9,
         "image": "https://parfumneked.hu/parfumneked/wp-content/uploads/2019/12/MASTER-pink-gold.jpg"
     },
     {
