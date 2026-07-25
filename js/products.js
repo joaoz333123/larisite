@@ -9,7 +9,7 @@ const products = [
         "subtitle": "Miniatura 30ml",
         "category": "perfumes",
         "badge": "Árabe",
-        "price": 119,
+        "price": 79.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1065370/17581344811545.jpg?v=638939092407570000"
     },
     {
