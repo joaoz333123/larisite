@@ -72,7 +72,7 @@ const products = [
         "subtitle": "Eau de Toilette",
         "category": "perfumes",
         "badge": "Masculino",
-        "price": 460,
+        "price": 389.9,
         "image": "https://cz.diesel.com/dw/image/v2/BBLG_PRD/on/demandware.static/-/Sites-diesel-master-catalog/default/dwcc19b0e9/images/large/PL0633_00PRO_01_E.jpg?q=80"
     },
     {
