@@ -81,7 +81,7 @@ const products = [
         "subtitle": "Eau de Parfum 100ml",
         "category": "perfumes",
         "badge": "Lançamento",
-        "price": 224,
+        "price": 199.9,
         "image": "https://www.drogasil.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F17031470.webp&w=3840&q=40"
     },
     {
@@ -99,7 +99,7 @@ const products = [
         "subtitle": "Frasco Spray 250ml",
         "category": "sprays",
         "badge": "Body Splash",
-        "price": 78,
+        "price": 79.9,
         "image": "https://assets.sistemawbuy.com.br/arquivos/2991e0dc262d35f367db71db5650f367/produtos/69b5588751194/15493845138-body-splash-dream-brand-collection-pure-seduction-feminino-250ml-3-69b558901881e.jpg"
     },
     {
@@ -117,7 +117,7 @@ const products = [
         "subtitle": "Pure Seduction 236ml",
         "category": "cremes",
         "badge": "Creme Corporal",
-        "price": 175,
+        "price": 79.9,
         "image": "https://acdn-us.mitiendanube.com/stores/004/134/460/products/copia-de-produtos-site-jc-imports-0bcf9d3503c25b1c6317707343339354-1024-1024.webp"
     },
     {
