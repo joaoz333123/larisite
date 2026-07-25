@@ -130,5 +130,41 @@ const products = [
         badge: "Hidratante",
         price: 82.00,
         image: "https://down-br.img.susercontent.com/file/br-11134207-7r98o-lsj9nwp0wnqc17"
+    },
+    {
+        id: 15,
+        name: "Armaf Club de Nuit Woman",
+        subtitle: "Eau de Parfum 105ml",
+        category: "perfumes",
+        badge: "Feminino",
+        price: 450.00,
+        image: "https://images.tcdn.com.br/img/img_prod/1348428/perfume_feminino_club_de_nuit_woman_eau_de_parfum_853353_1_1a83bb615f8bad669a370d9269d471f6.jpg"
+    },
+    {
+        id: 16,
+        name: "Armaf Club de Nuit Intense Man",
+        subtitle: "Eau de Toilette 105ml",
+        category: "perfumes",
+        badge: "Masculino",
+        price: 450.00,
+        image: "https://images.tcdn.com.br/img/img_prod/1222831/club_de_nuit_intense_man_de_armaf_eau_de_toilette_753_1_6e290264ba5ce0345336ea2303ce0451.jpg"
+    },
+    {
+        id: 17,
+        name: "Orientica Azure Fantasy",
+        subtitle: "Frasco 80ml",
+        category: "perfumes",
+        badge: "Árabe Premium",
+        price: 450.00,
+        image: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1029615/17581340559327.jpg?v=638937308597370000"
+    },
+    {
+        id: 18,
+        name: "Lattafa Musamam White Intense",
+        subtitle: "Eau de Parfum 100ml",
+        category: "perfumes",
+        badge: "Árabe",
+        price: 450.00,
+        image: "https://t34114.vtexassets.com/arquivos/ids/303685/perfume-lattafa-musamam-white-intense-edp-100ml.jpg?v=639192808941100000"
     }
 ];
