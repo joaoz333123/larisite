@@ -18,7 +18,7 @@ const products = [
         "subtitle": "Fakhar Rose 100ml",
         "category": "perfumes",
         "badge": "Mais Vendido",
-        "price": 280,
+        "price": 279.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2646704/17582505965066.jpg?v=639190373067270000"
     },
     {
