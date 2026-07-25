@@ -1,5 +1,5 @@
 // =================================================================
-// BANCO DE DADOS DE PRODUTOS E IMAGENS - LARI BIRUTA COSMÉTICOS
+// BANCO DE DADOS DE PRODUTOS E IMAGENS - EXATO ENIGMA
 // =================================================================
 // Para alterar a foto de um produto, basta mudar a propriedade "image".
 // Você pode usar uma URL da internet ou o caminho de uma foto na pasta images/ (ex: "images/meu-perfume.jpg").
