@@ -30,7 +30,7 @@ const products = [
         category: "perfumes",
         badge: "Árabe Premium",
         price: 150.00,
-        image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=500&q=80"
+        image: "https://assets.kenzz.com/processed/35c7a96219bba97fb726c7b4b4c8d63a8505a3f518830e530b48ac0bf3968807_1200.webp"
     },
     {
         id: 4,
