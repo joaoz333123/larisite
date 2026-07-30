@@ -144,7 +144,7 @@ const products = [
         "subtitle": "Eau de Toilette 105ml",
         "category": "perfumes",
         "badge": "Masculino",
-        "price": 450,
+        "price": 349.9,
         "image": "https://images.tcdn.com.br/img/img_prod/1222831/club_de_nuit_intense_man_de_armaf_eau_de_toilette_753_1_6e290264ba5ce0345336ea2303ce0451.jpg"
     },
     {
