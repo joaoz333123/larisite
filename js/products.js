@@ -182,5 +182,14 @@ const products = [
         "badge": "Importado Orig.",
         "price": 119.9,
         "image": "https://m.media-amazon.com/images/I/61Sjd2C-gUL._AC_SL1000_.jpg"
+    },
+    {
+        "id": 21,
+        "name": "Silver King Masculino",
+        "subtitle": "Eau de Parfum 100ml",
+        "category": "perfumes",
+        "badge": "Importado Orig.",
+        "price": 159.9,
+        "image": "blob:https://web.whatsapp.com/c8001a53-0d3c-4fd3-b725-5079d707a4ae"
     }
 ];
