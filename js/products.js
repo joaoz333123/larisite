@@ -173,5 +173,14 @@ const products = [
         "badge": "Árabe",
         "price": 200,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/701285-800-800/3605533315224-3605533315163.05.jpg.jpg?v=638670158057000000"
+    },
+    {
+        "id": 20,
+        "name": "Story Off Black New Brand Men",
+        "subtitle": "100",
+        "category": "perfumes",
+        "badge": "Importado Orig.",
+        "price": 119.9,
+        "image": "https://m.media-amazon.com/images/I/61Sjd2C-gUL._AC_SL1000_.jpg"
     }
 ];
