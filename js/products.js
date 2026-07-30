@@ -135,7 +135,7 @@ const products = [
         "subtitle": "Eau de Parfum 105ml",
         "category": "perfumes",
         "badge": "Feminino",
-        "price": 450,
+        "price": 279.9,
         "image": "https://images.tcdn.com.br/img/img_prod/1348428/perfume_feminino_club_de_nuit_woman_eau_de_parfum_853353_1_1a83bb615f8bad669a370d9269d471f6.jpg"
     },
     {
@@ -189,7 +189,7 @@ const products = [
         "subtitle": "Eau de Parfum 100ml",
         "category": "perfumes",
         "badge": "Importado Orig.",
-        "price": 179,
+        "price": 159.9,
         "image": "blob:https://web.whatsapp.com/c8001a53-0d3c-4fd3-b725-5079d707a4ae"
     }
 ];
