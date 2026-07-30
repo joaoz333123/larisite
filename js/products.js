@@ -189,7 +189,7 @@ const products = [
         "subtitle": "Eau de Parfum 100ml",
         "category": "perfumes",
         "badge": "Importado Orig.",
-        "price": 159.9,
+        "price": 179,
         "image": "blob:https://web.whatsapp.com/c8001a53-0d3c-4fd3-b725-5079d707a4ae"
     }
 ];
