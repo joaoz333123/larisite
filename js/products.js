@@ -90,7 +90,7 @@ const products = [
         "subtitle": "Eau de Parfum 100ml",
         "category": "perfumes",
         "badge": "Árabe",
-        "price": 220,
+        "price": 159.9,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkdMqK5LJeHbcGkuiWTFG_NmiDeql_AB8xavff-NnqTQ&s=10"
     },
     {
@@ -126,7 +126,7 @@ const products = [
         "subtitle": "Inspiração Angel 200ml",
         "category": "cremes",
         "badge": "Hidratante",
-        "price": 79.9,
+        "price": 99.9,
         "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-lsj9nwp0wnqc17"
     },
     {
