@@ -108,7 +108,7 @@ const products = [
         "subtitle": "All Over Spray 150ml",
         "category": "sprays",
         "badge": "Body Spray",
-        "price": 153,
+        "price": 89.9,
         "image": "https://images.tcdn.com.br/img/img_prod/1351546/perfume_lattafa_ana_abiyedh_rouge_all_over_spray_1_1_20260414182749_f6b3ea638402.png"
     },
     {
