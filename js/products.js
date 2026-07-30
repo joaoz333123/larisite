@@ -36,7 +36,7 @@ const products = [
         "subtitle": "Eau de Toilette 100ml",
         "category": "perfumes",
         "badge": "Importado Orig.",
-        "price": 599.9,
+        "price": 499.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/485803-800-800/212-vip-men-carolina-hererra-100ml--3-.jpg?v=639192909607800000"
     },
     {
