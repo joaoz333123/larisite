@@ -166,15 +166,6 @@ const products = [
         "image": "https://t34114.vtexassets.com/arquivos/ids/303685/perfume-lattafa-musamam-white-intense-edp-100ml.jpg?v=639192808941100000"
     },
     {
-        "id": 19,
-        "name": "teste",
-        "subtitle": "teste",
-        "category": "perfumes",
-        "badge": "Árabe",
-        "price": 200,
-        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/701285-800-800/3605533315224-3605533315163.05.jpg.jpg?v=638670158057000000"
-    },
-    {
         "id": 20,
         "name": "Story Off Black New Brand Men",
         "subtitle": "100 ml",
