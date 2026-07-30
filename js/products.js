@@ -177,7 +177,7 @@ const products = [
     {
         "id": 20,
         "name": "Story Off Black New Brand Men",
-        "subtitle": "100",
+        "subtitle": "100 ml",
         "category": "perfumes",
         "badge": "Importado Orig.",
         "price": 119.9,
