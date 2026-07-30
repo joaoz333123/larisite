@@ -45,7 +45,7 @@ const products = [
         "subtitle": "Frasco 100ml",
         "category": "perfumes",
         "badge": "Exclusivo",
-        "price": 145,
+        "price": 159.9,
         "image": "https://www.lgimportados.com/produtos_img/9/0/0/1/5/7/IMG_900157_3.JPG"
     },
     {
