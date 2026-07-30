@@ -162,7 +162,7 @@ const products = [
         "subtitle": "Eau de Parfum 100ml",
         "category": "perfumes",
         "badge": "Árabe",
-        "price": 450,
+        "price": 399.9,
         "image": "https://t34114.vtexassets.com/arquivos/ids/303685/perfume-lattafa-musamam-white-intense-edp-100ml.jpg?v=639192808941100000"
     },
     {
