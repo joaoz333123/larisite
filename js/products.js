@@ -221,7 +221,7 @@ const products = [
     },
     {
         "id": 26,
-        "name": "Sabah All Wurud",
+        "name": "Sabah Al Wurud",
         "subtitle": "Arabian Brand 200ml",
         "category": "cremes",
         "badge": "Arabian Body Lottion",
