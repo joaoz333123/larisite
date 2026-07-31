@@ -236,5 +236,14 @@ const products = [
         "badge": "Árabe miniatura",
         "price": 79.9,
         "image": "https://cdn.atacadoconnect.com/produtos/1374872/perfume-beauty-brand-sabah-a-079-al-wurud-eau-de-parfum-feminino-25ml-1374872-n4ugp.webp"
+    },
+    {
+        "id": 28,
+        "name": "Lattafa Fakhar Eau de Parfum",
+        "subtitle": "All Over Spray",
+        "category": "perfumes",
+        "badge": "Mais vendido",
+        "price": 99.9,
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_636601-MLA113407917801_062026-F-spray-corpo-e-cabelo-fakhar-pride-of-lattafa-150ml.webp"
     }
 ];
