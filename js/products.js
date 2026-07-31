@@ -182,5 +182,14 @@ const products = [
         "badge": "Importado Orig.",
         "price": 159.9,
         "image": "https://www.mercadolivre.com.br/silver-king-avec-creations/p/MLB66364814"
+    },
+    {
+        "id": 22,
+        "name": "Yara Lattafa",
+        "subtitle": "Eau de Perfum 100 ml",
+        "category": "perfumes",
+        "badge": "Árabe Original",
+        "price": 189.9,
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_993997-MLA114847056659_072026-F.webp"
     }
 ];
