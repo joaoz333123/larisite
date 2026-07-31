@@ -254,5 +254,14 @@ const products = [
         "badge": "Desodorsnte Spray",
         "price": 200,
         "image": "https://dcdn-us.mitiendanube.com/stores/006/005/014/products/6-f8260587711deae38917579529542298-1024-1024.webp"
+    },
+    {
+        "id": 30,
+        "name": "Atheeri Lattafa",
+        "subtitle": "Eau de Parfum 100ml",
+        "category": "perfumes",
+        "badge": "Exclusivo",
+        "price": 459.9,
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_702031-MLA113714043249_062026-F.webp"
     }
 ];
