@@ -218,5 +218,14 @@ const products = [
         "badge": "Mais vendido",
         "price": 189.9,
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_797101-MLA108811455004_032026-F.webp"
+    },
+    {
+        "id": 26,
+        "name": "Sabah All Wurud",
+        "subtitle": "Arabian Brand 200ml",
+        "category": "cremes",
+        "badge": "Arabian Body Lottion",
+        "price": 99.9,
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_797101-MLA108811455004_032026-F.webp"
     }
 ];
