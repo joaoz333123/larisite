@@ -181,6 +181,6 @@ const products = [
         "category": "perfumes",
         "badge": "Importado Orig.",
         "price": 159.9,
-        "image": "blob:https://web.whatsapp.com/c8001a53-0d3c-4fd3-b725-5079d707a4ae"
+        "image": "https://www.mercadolivre.com.br/silver-king-avec-creations/p/MLB66364814"
     }
 ];
