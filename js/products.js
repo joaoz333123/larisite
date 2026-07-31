@@ -191,5 +191,14 @@ const products = [
         "badge": "Árabe Original",
         "price": 189.9,
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_960338-MLA111231794657_052026-F.webp"
+    },
+    {
+        "id": 23,
+        "name": "Yara Lattafa All",
+        "subtitle": "Over Spray 150ml",
+        "category": "sprays",
+        "badge": "ÁRABE",
+        "price": 99.9,
+        "image": "https://zaoud.it/cdn/shop/files/Lattafa-yara-all-over-spray-bottle-against-white-background.jpg?v=1748026970&width=990"
     }
 ];
