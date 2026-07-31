@@ -272,5 +272,14 @@ const products = [
         "badge": "Mais Vendido",
         "price": 359.9,
         "image": "https://down-br.img.susercontent.com/file/br-11134207-820mh-mofwd62mbmdi08@resize_w900_nl.webp"
+    },
+    {
+        "id": 32,
+        "name": "My Love Intense",
+        "subtitle": "Eau de Parfum 100ml",
+        "category": "perfumes",
+        "badge": "Importado Orig.",
+        "price": 119.9,
+        "image": "https://www.mercadolivre.com.br/perfume-maison-de-milan-my-love-intense-edp/up/MLBU3913746162"
     }
 ];
