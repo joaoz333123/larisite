@@ -188,7 +188,7 @@ const products = [
         "name": "Yara Lattafa",
         "subtitle": "Eau de Perfum 100 ml",
         "category": "perfumes",
-        "badge": "Árabe Original",
+        "badge": "Mais Vendido",
         "price": 189.9,
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_960338-MLA111231794657_052026-F.webp"
     },
