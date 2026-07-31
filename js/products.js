@@ -263,5 +263,14 @@ const products = [
         "badge": "Exclusivo",
         "price": 459.9,
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_702031-MLA113714043249_062026-F.webp"
+    },
+    {
+        "id": 31,
+        "name": "Mussamam lattafa",
+        "subtitle": "Eau de Parfum 100ml",
+        "category": "perfumes",
+        "badge": "Mais Vendido",
+        "price": 359.9,
+        "image": "https://down-br.img.susercontent.com/file/br-11134207-820mh-mofwd62mbmdi08@resize_w900_nl.webp"
     }
 ];
