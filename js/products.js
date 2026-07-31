@@ -215,7 +215,7 @@ const products = [
         "name": "Sabah Al Ward",
         "subtitle": "Eau de Perfum100ml",
         "category": "perfumes",
-        "badge": "Árabe",
+        "badge": "Mais vendido",
         "price": 189.9,
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_797101-MLA108811455004_032026-F.webp"
     }
