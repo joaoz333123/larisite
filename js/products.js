@@ -212,7 +212,7 @@ const products = [
     },
     {
         "id": 25,
-        "name": "Sabah All Ward",
+        "name": "Sabah Al Ward",
         "subtitle": "Eau de Perfum100ml",
         "category": "perfumes",
         "badge": "Mais vendido",
