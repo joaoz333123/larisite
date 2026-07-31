@@ -190,6 +190,6 @@ const products = [
         "category": "perfumes",
         "badge": "Árabe Original",
         "price": 189.9,
-        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_993997-MLA114847056659_072026-F.webp"
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_960338-MLA111231794657_052026-F.webp"
     }
 ];
