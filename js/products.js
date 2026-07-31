@@ -200,5 +200,14 @@ const products = [
         "badge": "ÁRABE",
         "price": 99.9,
         "image": "https://zaoud.it/cdn/shop/files/Lattafa-yara-all-over-spray-bottle-against-white-background.jpg?v=1748026970&width=990"
+    },
+    {
+        "id": 24,
+        "name": "Yaran Miniatura",
+        "subtitle": "Eau de Perfum 25ml",
+        "category": "perfumes",
+        "badge": "Árabe",
+        "price": 59.9,
+        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRx5ldXY-jsk4t6QVWAaAVmN8NB0uvq0tCeZ9S51gMOvksorcMuaWrrKCqJVsxU34L5pab6O7mYvYwz7zh56xWC4LeRgGx8Ag"
     }
 ];
