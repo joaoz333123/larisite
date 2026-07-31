@@ -245,5 +245,14 @@ const products = [
         "badge": "Mais vendido",
         "price": 99.9,
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_636601-MLA113407917801_062026-F-spray-corpo-e-cabelo-fakhar-pride-of-lattafa-150ml.webp"
+    },
+    {
+        "id": 29,
+        "name": "Lattafa Fakhar",
+        "subtitle": "Pride  Of Lattafa  200ML",
+        "category": "sprays",
+        "badge": "Desodorsnte Spray",
+        "price": 200,
+        "image": "https://dcdn-us.mitiendanube.com/stores/006/005/014/products/6-f8260587711deae38917579529542298-1024-1024.webp"
     }
 ];
