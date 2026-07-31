@@ -209,5 +209,14 @@ const products = [
         "badge": "Árabe",
         "price": 59.9,
         "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRx5ldXY-jsk4t6QVWAaAVmN8NB0uvq0tCeZ9S51gMOvksorcMuaWrrKCqJVsxU34L5pab6O7mYvYwz7zh56xWC4LeRgGx8Ag"
+    },
+    {
+        "id": 25,
+        "name": "Sabah Al Ward",
+        "subtitle": "Eau de Perfum100ml",
+        "category": "perfumes",
+        "badge": "Árabe",
+        "price": 189.9,
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_797101-MLA108811455004_032026-F.webp"
     }
 ];
