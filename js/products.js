@@ -212,7 +212,7 @@ const products = [
     },
     {
         "id": 25,
-        "name": "Sabah Al Ward",
+        "name": "Sabah All Ward",
         "subtitle": "Eau de Perfum100ml",
         "category": "perfumes",
         "badge": "Mais vendido",
@@ -227,5 +227,14 @@ const products = [
         "badge": "Arabian Body Lottion",
         "price": 99.9,
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_797101-MLA108811455004_032026-F.webp"
+    },
+    {
+        "id": 27,
+        "name": "Sabah Al Wurud",
+        "subtitle": "Miniatura 25ml",
+        "category": "perfumes",
+        "badge": "Árabe miniatura",
+        "price": 79.9,
+        "image": "https://www.google.com/imgres?q=Sabah%20AL%20wurud%20miniatura&imgurl=https%3A%2F%2Flookaside.instagram.com%2Fseo%2Fgoogle_widget%2Fcrawler%2F%3Fmedia_id%3D3942498469348186018&imgrefurl=https%3A%2F%2Fwww.instagram.com%2Fp%2FDa2kXg5BRei%2F&docid=GX-B_S4RNZqCCM&tbnid=edR1ir2nAHCwiM&vet=12ahUKEwjn896FkPyVAxWQDbkGHRxnL4IQnPAOegQIQhAA..i&w=1402&h=1753&hcb=2&itg=1&ved=2ahUKEwjn896FkPyVAxWQDbkGHRxnL4IQnPAOegQIQhAA"
     }
 ];
