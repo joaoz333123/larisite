@@ -362,5 +362,14 @@ const products = [
         "badge": "loção hidratante",
         "price": 89.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1366114-800-800/17677173928800.jpg?v=639033823851800000"
+    },
+    {
+        "id": 42,
+        "name": "Hounor Jessica Twain",
+        "subtitle": "Edp 25ML",
+        "category": "perfumes",
+        "badge": "Miniatura",
+        "price": 59.9,
+        "image": "https://cdnx.jumpseller.com/perfumesdelujo/image/66928091/resize/610/610?1756224251"
     }
 ];
