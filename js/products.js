@@ -461,5 +461,14 @@ const products = [
         "badge": "Destaque",
         "price": 69.9,
         "image": "https://www.brandcollectionatacado.com.br/body-splash-shimmer-dream-brand-collection-bare-vanilla-feminino-250ml/?srsltid=AfmBOooiuKHHK8G6NDpV5KGxZv77F5VUMsJBhx0SWWx99jKTNrYDNApe"
+    },
+    {
+        "id": 53,
+        "name": "Body Splash Shimmer Dream Brand Collection Bare Vanilla Feminino 250ml",
+        "subtitle": "Feminino 250ml",
+        "category": "sprays",
+        "badge": "Importado Orig.",
+        "price": 69.9,
+        "image": "https://acdn-us.mitiendanube.com/stores/004/512/690/products/5e2262ca-f3b1-439f-a117-6ab221afa887-aa1d68725725d32ea317641821666266-1024-1024.webp"
     }
 ];
