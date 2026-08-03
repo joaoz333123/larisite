@@ -281,5 +281,14 @@ const products = [
         "badge": "Importado Orig.",
         "price": 119.9,
         "image": "https://www.mercadolivre.com.br/perfume-maison-de-milan-my-love-intense-edp/up/MLBU3913746162"
+    },
+    {
+        "id": 33,
+        "name": "Lacoste Essential",
+        "subtitle": "Eau de Toilette 125ml",
+        "category": "perfumes",
+        "badge": "Importado Orig.",
+        "price": 389.9,
+        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/619680-450-450/essential--lacoste-perfume-masculino-eau-te-toilette--4-.jpg?v=638858741760400000"
     }
 ];
