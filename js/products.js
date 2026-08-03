@@ -407,5 +407,14 @@ const products = [
         "badge": "Cabelo e corpo",
         "price": 99.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1447912-450-450/17706712692622.jpg?v=639066443778070000"
+    },
+    {
+        "id": 47,
+        "name": "Body Lotion Brand Collection",
+        "subtitle": "Hidratante corporal 200ml",
+        "category": "perfumes",
+        "badge": "Sabah Rosa Hidratante",
+        "price": 99.9,
+        "image": "https://cdn.atacadoconnect.com/produtos/1379501/body-lotion-brand-collection-c-084-ndurrat-al-aroosah-200ml-1379501-cccqw.webp"
     }
 ];
