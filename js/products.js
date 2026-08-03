@@ -298,6 +298,6 @@ const products = [
         "category": "perfumes",
         "badge": "Árabe",
         "price": 249.9,
-        "image": "https://tuzzut.com/products/hayaati-edp-perfume-100ml-by-lattafa?srsltid=AfmBOoqF0r4SbvYbiGh6rK6nZmIYWu9dUMbbLb54TnZPUgl_h9Ao32bz"
+        "image": "https://www.epocacosmeticos.com.br/perfume-lattafa-hayaati-eau-de-parfum-unissex-100ml-235711/p"
     }
 ];
