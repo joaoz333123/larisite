@@ -326,5 +326,14 @@ const products = [
         "badge": "Árabe",
         "price": 289.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1208034-800-800/17619441430162.jpg?v=638984036627630000"
+    },
+    {
+        "id": 38,
+        "name": "Lattafa Asad",
+        "subtitle": "Eau de Parfum Perfume 100ml",
+        "category": "perfumes",
+        "badge": "Árabe Masculino",
+        "price": 229.9,
+        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1292447-800-800/17581402187993.jpg?v=638998664982100000"
     }
 ];
