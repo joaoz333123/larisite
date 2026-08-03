@@ -308,5 +308,14 @@ const products = [
         "badge": "Árabe",
         "price": 39.9,
         "image": "https://imageswscdn.wslojas.com.br/files/2940/MED_produto-desodorante-hayaati-lattafa-masculino-200ml-perfumes-arabes-lattafa-no-atacado-3829390352.webp"
+    },
+    {
+        "id": 36,
+        "name": "Asad Elixir de Lattafa",
+        "subtitle": "Eau De Parfum 100 Ml",
+        "category": "perfumes",
+        "badge": "Árabe",
+        "price": 279.9,
+        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1333447-800-800/17653114059844.jpg?v=639009661903100000"
     }
 ];
