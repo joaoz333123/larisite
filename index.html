@@ -268,16 +268,16 @@
                     <div>
                         <!-- Product Image Box -->
                         <div class="relative bg-gray-50 aspect-square p-4 flex items-center justify-center overflow-hidden">
-                            <span class="absolute top-2 left-2 bg-brand-dark/90 text-brand-gold text-[10px] font-bold uppercase px-2 py-0.5 rounded tracking-wider">
+                            <span class="absolute top-2 left-2 z-10 bg-brand-dark/90 text-brand-gold text-[10px] font-bold uppercase px-2 py-0.5 rounded tracking-wider">
                                 ${item.badge}
                             </span>
                             ${isOutOfStock ? `
-                            <span class="absolute top-2 right-2 bg-red-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded shadow z-10 flex items-center gap-1">
+                            <span class="absolute top-2 right-2 z-10 bg-red-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded shadow flex items-center gap-1">
                                 <i class="fa-solid fa-circle-exclamation text-[9px]"></i> Sem Estoque
                             </span>
                             ` : ''}
                             <img src="${item.image}" alt="${item.name}" 
-                                class="object-contain h-full w-full group-hover:scale-105 transition duration-300 ${isOutOfStock ? 'grayscale-[30%]' : ''}"
+                                class="relative z-0 group-hover:z-20 object-contain h-full w-full group-hover:scale-105 transition duration-300 ${isOutOfStock ? 'grayscale-[30%]' : ''}"
                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(item.name)}';">
                         </div>
                         
