@@ -473,6 +473,6 @@ const products = [
         "badge": "Importado Orig.",
         "price": 69.9,
         "image": "https://acdn-us.mitiendanube.com/stores/004/512/690/products/5e2262ca-f3b1-439f-a117-6ab221afa887-aa1d68725725d32ea317641821666266-1024-1024.webp",
-        "status": "out_of_stock"
+        "status": "available"
     }
 ];
