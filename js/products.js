@@ -33,11 +33,11 @@ const products = [
         "subtitle": "Eau de Parfum 100ml",
         "category": "perfumes",
         "badge": "Árabe Premium",
-        "price": 159.9,
+        "price": 179.99,
         "image": "https://assets.kenzz.com/processed/35c7a96219bba97fb726c7b4b4c8d63a8505a3f518830e530b48ac0bf3968807_1200.webp",
+        "status": "available",
         "isOnSale": true,
-        "originalPrice": 199.88,
-        "status": "available"
+        "originalPrice": 199.88
     },
     {
         "id": 4,
