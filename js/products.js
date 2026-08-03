@@ -416,5 +416,14 @@ const products = [
         "badge": "Sabah Rosa Hidratante",
         "price": 99.9,
         "image": "https://cdn.atacadoconnect.com/produtos/1379501/body-lotion-brand-collection-c-084-ndurrat-al-aroosah-200ml-1379501-cccqw.webp"
+    },
+    {
+        "id": 48,
+        "name": "Desodorante Masculino Árabe Lattafa Fakhar Black",
+        "subtitle": "Perfume spray 200ml",
+        "category": "sprays",
+        "badge": "Importado Orig.",
+        "price": 39.9,
+        "image": "https://images.tcdn.com.br/img/img_prod/1241189/desodorante_masculino_rabe_lattafa_fakhar_black_20_3_20260423125435_d1b844d8543f.jpg"
     }
 ];
