@@ -335,5 +335,23 @@ const products = [
         "badge": "Árabe Masculino",
         "price": 229.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1292447-800-800/17581402187993.jpg?v=638998664982100000"
+    },
+    {
+        "id": 39,
+        "name": "Creme Hidratante Inspiração Love Spell",
+        "subtitle": "Beauty Brand 236ml",
+        "category": "cremes",
+        "badge": "Aroma Envolvente",
+        "price": 79.9,
+        "image": "https://acdn-us.mitiendanube.com/stores/004/134/460/products/copia-de-produtos-site-jc-imports-c9469cea18ea0e2a2717707360567449-1024-1024.webp"
+    },
+    {
+        "id": 40,
+        "name": "Body Splash  Inspiração Love Spell",
+        "subtitle": "Dream Brand Collection 250ml",
+        "category": "sprays",
+        "badge": "Importado Orig.",
+        "price": 69.9,
+        "image": "https://acdn-us.mitiendanube.com/stores/004/134/460/products/img_0582-949e98d7758862f60117374733320863-1024-1024.webp"
     }
 ];
