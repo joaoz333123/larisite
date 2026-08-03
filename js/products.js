@@ -10,7 +10,8 @@ const products = [
         "category": "perfumes",
         "badge": "Árabe",
         "price": 79.9,
-        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1065370/17581344811545.jpg?v=638939092407570000"
+        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1065370/17581344811545.jpg?v=638939092407570000",
+        "status": "out_of_stock"
     },
     {
         "id": 2,
@@ -452,7 +453,7 @@ const products = [
         "badge": "Importado Orig.",
         "price": 39.9,
         "image": "https://www.intenseoud.com/cdn/shop/files/2_b619787c-9c53-496b-8c0c-c23a3ed628c2.webp?v=1774802331",
-        "status": "hidden"
+        "status": "available"
     },
     {
         "id": 52,
@@ -462,7 +463,7 @@ const products = [
         "badge": "Destaque",
         "price": 69.9,
         "image": "https://www.brandcollectionatacado.com.br/body-splash-shimmer-dream-brand-collection-bare-vanilla-feminino-250ml/?srsltid=AfmBOooiuKHHK8G6NDpV5KGxZv77F5VUMsJBhx0SWWx99jKTNrYDNApe",
-        "status": "out_of_stock"
+        "status": "available"
     },
     {
         "id": 53,
@@ -472,6 +473,6 @@ const products = [
         "badge": "Importado Orig.",
         "price": 69.9,
         "image": "https://acdn-us.mitiendanube.com/stores/004/512/690/products/5e2262ca-f3b1-439f-a117-6ab221afa887-aa1d68725725d32ea317641821666266-1024-1024.webp",
-        "status": "out_of_stock"
+        "status": "available"
     }
 ];
