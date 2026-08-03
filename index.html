@@ -246,9 +246,12 @@
             const container = document.getElementById('productsContainer');
             const counter = document.getElementById('productCounter');
             
-            if (counter) counter.innerText = `Exibindo ${items.length} itens`;
+            // Filtrar produtos que estão ocultos do catálogo público
+            const visibleItems = items.filter(p => (p.status || 'available') !== 'hidden');
 
-            if (items.length === 0) {
+            if (counter) counter.innerText = `Exibindo ${visibleItems.length} itens`;
+
+            if (visibleItems.length === 0) {
                 container.innerHTML = `
                     <div class="col-span-full py-12 text-center text-gray-500">
                         <i class="fa-solid fa-box-open text-4xl mb-2 text-gray-300"></i>
@@ -258,16 +261,23 @@
                 return;
             }
 
-            container.innerHTML = items.map(item => `
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden flex flex-col justify-between transition group">
+            container.innerHTML = visibleItems.map(item => {
+                const isOutOfStock = (item.status === 'out_of_stock');
+                return `
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden flex flex-col justify-between transition group ${isOutOfStock ? 'opacity-85' : ''}">
                     <div>
                         <!-- Product Image Box -->
                         <div class="relative bg-gray-50 aspect-square p-4 flex items-center justify-center overflow-hidden">
                             <span class="absolute top-2 left-2 bg-brand-dark/90 text-brand-gold text-[10px] font-bold uppercase px-2 py-0.5 rounded tracking-wider">
                                 ${item.badge}
                             </span>
+                            ${isOutOfStock ? `
+                            <span class="absolute top-2 right-2 bg-red-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded shadow z-10 flex items-center gap-1">
+                                <i class="fa-solid fa-circle-exclamation text-[9px]"></i> Sem Estoque
+                            </span>
+                            ` : ''}
                             <img src="${item.image}" alt="${item.name}" 
-                                class="object-contain h-full w-full group-hover:scale-105 transition duration-300"
+                                class="object-contain h-full w-full group-hover:scale-105 transition duration-300 ${isOutOfStock ? 'grayscale-[30%]' : ''}"
                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(item.name)}';">
                         </div>
                         
@@ -288,12 +298,18 @@
                         <div class="text-brand-dark font-extrabold text-sm sm:text-base mb-2">
                             R$ ${item.price.toFixed(2).replace('.', ',')}
                         </div>
+                        ${isOutOfStock ? `
+                        <button disabled class="w-full bg-gray-200 text-gray-500 font-semibold py-2 px-3 rounded-lg text-xs cursor-not-allowed uppercase flex items-center justify-center gap-1.5 border border-gray-300">
+                            <i class="fa-solid fa-ban text-[10px]"></i> Sem Estoque
+                        </button>
+                        ` : `
                         <button onclick="addToCart(${item.id})" class="w-full bg-brand-dark hover:bg-brand-gold hover:text-brand-dark text-white font-semibold py-2 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5 uppercase">
                             <i class="fa-solid fa-plus text-[10px]"></i> Adicionar
                         </button>
+                        `}
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
         function setCategory(category) {
@@ -341,6 +357,7 @@
         // Cart Actions
         function addToCart(id) {
             const product = products.find(p => p.id === id);
+            if (!product || (product.status && product.status !== 'available')) return;
             const existing = cart.find(item => item.id === id);
 
             if (existing) {
