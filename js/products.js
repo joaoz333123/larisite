@@ -389,5 +389,14 @@ const products = [
         "badge": "Miniatura Unisex",
         "price": 59.9,
         "image": "https://cdnx.jumpseller.com/nym-perfumeria/image/66938543/resize/610/610?1756249188"
+    },
+    {
+        "id": 45,
+        "name": "Sabah Al Ward Sugar",
+        "subtitle": "Eau de Parfum 25ml",
+        "category": "perfumes",
+        "badge": "versão em miniatura",
+        "price": 79.9,
+        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1179573-800-800/17618482033102.jpg?v=638975228506100000"
     }
 ];
