@@ -280,7 +280,7 @@ const products = [
         "category": "perfumes",
         "badge": "Importado Orig.",
         "price": 119.9,
-        "image": "https://www.mercadolivre.com.br/perfume-maison-de-milan-my-love-intense-edp/up/MLBU3913746162"
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_604282-MLA114529693767_072026-F.webp"
     },
     {
         "id": 33,
