@@ -11,7 +11,7 @@ const products = [
         "badge": "Árabe",
         "price": 79.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1065370/17581344811545.jpg?v=638939092407570000",
-        "status": "out_of_stock"
+        "status": "available"
     },
     {
         "id": 2,
@@ -473,6 +473,6 @@ const products = [
         "badge": "Importado Orig.",
         "price": 69.9,
         "image": "https://acdn-us.mitiendanube.com/stores/004/512/690/products/5e2262ca-f3b1-439f-a117-6ab221afa887-aa1d68725725d32ea317641821666266-1024-1024.webp",
-        "status": "available"
+        "status": "out_of_stock"
     }
 ];
