@@ -298,6 +298,6 @@ const products = [
         "category": "perfumes",
         "badge": "Árabe",
         "price": 249.9,
-        "image": "https://www.epocacosmeticos.com.br/perfume-lattafa-hayaati-eau-de-parfum-unissex-100ml-235711/p"
+        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2384948-450-450/17810523151528.jpg?v=639167770290970000"
     }
 ];
