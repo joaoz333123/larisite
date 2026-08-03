@@ -226,7 +226,7 @@ const products = [
         "category": "cremes",
         "badge": "Arabian Body Lottion",
         "price": 99.9,
-        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_797101-MLA108811455004_032026-F.webp"
+        "image": "https://cdn.atacadoconnect.com/produtos/1390131/lotion-beauty-brand-c-079-sabah-al-wurud-200ml-1390131-ias8m.webp"
     },
     {
         "id": 27,
