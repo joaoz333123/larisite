@@ -116,7 +116,7 @@ const products = [
         "name": "Beauty Brand Loção Hidratante",
         "subtitle": "Pure Seduction 236ml",
         "category": "cremes",
-        "badge": "Creme Corporal",
+        "badge": "Loção Hidratante",
         "price": 79.9,
         "image": "https://acdn-us.mitiendanube.com/stores/004/134/460/products/copia-de-produtos-site-jc-imports-0bcf9d3503c25b1c6317707343339354-1024-1024.webp"
     },
