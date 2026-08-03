@@ -20,7 +20,9 @@ const products = [
         "category": "perfumes",
         "badge": "Mais Vendido",
         "price": 279.9,
-        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2646704/17582505965066.jpg?v=639190373067270000"
+        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2646704/17582505965066.jpg?v=639190373067270000",
+        "isOnSale": false,
+        "originalPrice": 349.88
     },
     {
         "id": 3,
@@ -29,7 +31,9 @@ const products = [
         "category": "perfumes",
         "badge": "Árabe Premium",
         "price": 159.9,
-        "image": "https://assets.kenzz.com/processed/35c7a96219bba97fb726c7b4b4c8d63a8505a3f518830e530b48ac0bf3968807_1200.webp"
+        "image": "https://assets.kenzz.com/processed/35c7a96219bba97fb726c7b4b4c8d63a8505a3f518830e530b48ac0bf3968807_1200.webp",
+        "isOnSale": false,
+        "originalPrice": 199.88
     },
     {
         "id": 4,
@@ -38,7 +42,10 @@ const products = [
         "category": "perfumes",
         "badge": "Importado Orig.",
         "price": 499.9,
-        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/485803-800-800/212-vip-men-carolina-hererra-100ml--3-.jpg?v=639192909607800000"
+        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/485803-800-800/212-vip-men-carolina-hererra-100ml--3-.jpg?v=639192909607800000",
+        "isOnSale": false,
+        "originalPrice": 624.88,
+        "status": "available"
     },
     {
         "id": 5,
@@ -47,7 +54,10 @@ const products = [
         "category": "perfumes",
         "badge": "Exclusivo",
         "price": 159.9,
-        "image": "https://www.lgimportados.com/produtos_img/9/0/0/1/5/7/IMG_900157_3.JPG"
+        "image": "https://www.lgimportados.com/produtos_img/9/0/0/1/5/7/IMG_900157_3.JPG",
+        "isOnSale": false,
+        "originalPrice": 199.88,
+        "status": "available"
     },
     {
         "id": 6,
@@ -465,7 +475,9 @@ const products = [
         "badge": "Destaque",
         "price": 69.9,
         "image": "https://www.brandcollectionatacado.com.br/body-splash-shimmer-dream-brand-collection-bare-vanilla-feminino-250ml/?srsltid=AfmBOooiuKHHK8G6NDpV5KGxZv77F5VUMsJBhx0SWWx99jKTNrYDNApe",
-        "status": "available"
+        "status": "available",
+        "isOnSale": true,
+        "originalPrice": 87.38
     },
     {
         "id": 53,
