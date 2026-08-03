@@ -380,5 +380,14 @@ const products = [
         "badge": "Miniatura masc",
         "price": 59.9,
         "image": "https://cdnx.jumpseller.com/perfumesdelujo/image/66929358/resize/610/610?1756226929"
+    },
+    {
+        "id": 44,
+        "name": "Megamare Jessica Twain",
+        "subtitle": "l Eau de Parfum25ml",
+        "category": "perfumes",
+        "badge": "Miniatura Unisex",
+        "price": 59.9,
+        "image": "https://cdnx.jumpseller.com/nym-perfumeria/image/66938543/resize/610/610?1756249188"
     }
 ];
