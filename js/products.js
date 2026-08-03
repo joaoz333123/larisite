@@ -371,5 +371,14 @@ const products = [
         "badge": "Miniatura",
         "price": 59.9,
         "image": "https://cdnx.jumpseller.com/perfumesdelujo/image/66928091/resize/610/610?1756224251"
+    },
+    {
+        "id": 43,
+        "name": "Fuking Fabulous Jessica Twain",
+        "subtitle": "Eau de Parfum 25ml",
+        "category": "perfumes",
+        "badge": "Miniatura masc",
+        "price": 59.9,
+        "image": "https://cdnx.jumpseller.com/perfumesdelujo/image/66929358/resize/610/610?1756226929"
     }
 ];
