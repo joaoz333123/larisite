@@ -175,6 +175,20 @@
                     </select>
                 </div>
 
+                <!-- Promoção -->
+                <div class="p-3 bg-amber-50 rounded-lg border border-amber-200 space-y-2">
+                    <label class="flex items-center gap-2 font-bold text-xs text-amber-900 cursor-pointer">
+                        <input type="checkbox" id="prodIsOnSale" onchange="togglePromoInputDisplay()" class="w-4 h-4 text-amber-600 rounded border-amber-300 focus:ring-amber-500">
+                        <i class="fa-solid fa-fire text-amber-500"></i> Produto em Promoção / Oferta
+                    </label>
+                    <div id="promoPriceContainer" class="hidden pt-1">
+                        <label class="block font-semibold text-xs text-amber-800 mb-1">Preço Normal / Antigo (De R$) *</label>
+                        <input type="number" step="0.01" id="prodOriginalPrice" placeholder="Ex: 499.90 (Preço antes do desconto)" 
+                            class="w-full bg-white border border-amber-300 rounded-lg p-2 text-xs focus:outline-none focus:border-amber-500">
+                        <p class="text-[10px] text-amber-700 mt-1">O valor informado no campo "Preço (R$)" acima será o NOVO preço com desconto.</p>
+                    </div>
+                </div>
+
                 <div>
                     <label class="block font-semibold text-xs text-gray-700 mb-1">URL da Imagem da Foto *</label>
                     <input type="url" id="prodImage" required placeholder="https://..." onchange="updateImagePreview()"
@@ -263,6 +277,16 @@
             }
         }
 
+        function togglePromoInputDisplay() {
+            const isChecked = document.getElementById('prodIsOnSale').checked;
+            const container = document.getElementById('promoPriceContainer');
+            if (isChecked) {
+                container.classList.remove('hidden');
+            } else {
+                container.classList.add('hidden');
+            }
+        }
+
         function renderAdminTable(items) {
             const tbody = document.getElementById('adminProductsList');
             const counter = document.getElementById('productCounter');
@@ -290,8 +314,19 @@
                     statusBadge = `<span class="bg-red-100 text-red-800 border border-red-200 px-2 py-0.5 rounded text-[10px] font-bold uppercase inline-flex items-center gap-1"><i class="fa-solid fa-eye-slash text-[7px] text-red-500"></i> Oculto</span>`;
                 }
 
+                const priceDisplay = (item.isOnSale && item.originalPrice) ? `
+                    <span class="line-through text-gray-400 text-[10px] block">De R$ ${Number(item.originalPrice).toFixed(2).replace('.', ',')}</span>
+                    <span class="text-red-600 font-extrabold text-xs">Por R$ ${Number(item.price).toFixed(2).replace('.', ',')}</span>
+                ` : `R$ ${Number(item.price).toFixed(2).replace('.', ',')}`;
+
+                const promoBadgeHtml = item.isOnSale ? `
+                    <span class="bg-amber-500 text-white px-1.5 py-0.5 rounded text-[9px] font-extrabold uppercase tracking-wider block mt-1 w-fit">
+                        <i class="fa-solid fa-fire text-[8px]"></i> PROMO
+                    </span>
+                ` : '';
+
                 return `
-                    <tr class="hover:bg-gray-50/80 transition ${status === 'hidden' ? 'bg-red-50/20' : status === 'out_of_stock' ? 'bg-amber-50/20' : ''}">
+                    <tr class="hover:bg-gray-50/80 transition ${status === 'hidden' ? 'bg-red-50/20' : status === 'out_of_stock' ? 'bg-amber-50/20' : item.isOnSale ? 'bg-amber-50/10' : ''}">
                         <td class="p-3 text-center">
                             <img src="${item.image}" alt="${item.name}" class="w-10 h-10 object-contain bg-white border border-gray-200 rounded p-1 mx-auto"
                                 onerror="this.src='https://via.placeholder.com/40?text=Erro';">
@@ -309,15 +344,19 @@
                             <span class="bg-brand-dark/10 text-brand-dark px-2 py-0.5 rounded text-[10px] font-bold uppercase">
                                 ${item.badge || 'Padrão'}
                             </span>
+                            ${promoBadgeHtml}
                         </td>
                         <td class="p-3">
                             ${statusBadge}
                         </td>
                         <td class="p-3 font-bold text-gray-900">
-                            R$ ${Number(item.price).toFixed(2).replace('.', ',')}
+                            ${priceDisplay}
                         </td>
                         <td class="p-3 text-center">
                             <div class="flex items-center justify-center gap-1.5">
+                                <button onclick="toggleProductPromotion(${item.id})" title="Ativar/Desativar Promoção" class="p-1.5 ${item.isOnSale ? 'bg-amber-500 text-white' : 'bg-gray-100 text-gray-400 hover:bg-gray-200'} rounded transition text-xs">
+                                    <i class="fa-solid fa-tag"></i>
+                                </button>
                                 <button onclick="toggleProductStatus(${item.id})" title="Alternar Status (Disponível -> Sem Estoque -> Oculto)" class="p-1.5 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded transition text-xs">
                                     <i class="fa-solid fa-rotate"></i>
                                 </button>
@@ -332,6 +371,17 @@
                     </tr>
                 `;
             }).join('');
+        }
+
+        function toggleProductPromotion(id) {
+            const p = adminProducts.find(item => item.id === id);
+            if (!p) return;
+
+            p.isOnSale = !p.isOnSale;
+            if (p.isOnSale && (!p.originalPrice || p.originalPrice <= p.price)) {
+                p.originalPrice = Math.round((p.price * 1.25) * 100) / 100;
+            }
+            renderAdminTable(adminProducts);
         }
 
         function toggleProductStatus(id) {
@@ -352,10 +402,12 @@
             const query = document.getElementById('adminSearchInput').value.toLowerCase();
             const filtered = adminProducts.filter(p => {
                 const statusText = (p.status === 'out_of_stock' ? 'sem estoque' : p.status === 'hidden' ? 'oculto' : 'disponivel');
+                const promoText = p.isOnSale ? 'promo promoção oferta' : '';
                 return p.name.toLowerCase().includes(query) || 
                        p.subtitle.toLowerCase().includes(query) ||
                        (p.badge && p.badge.toLowerCase().includes(query)) ||
-                       statusText.includes(query);
+                       statusText.includes(query) ||
+                       promoText.includes(query);
             });
             renderAdminTable(filtered);
         }
@@ -367,6 +419,9 @@
                 document.getElementById('productForm').reset();
                 document.getElementById('editProductId').value = '';
                 document.getElementById('prodStatus').value = 'available';
+                document.getElementById('prodIsOnSale').checked = false;
+                document.getElementById('prodOriginalPrice').value = '';
+                togglePromoInputDisplay();
                 document.getElementById('imagePreview').src = 'https://via.placeholder.com/80?text=Preview';
             }
             modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -394,7 +449,10 @@
             document.getElementById('prodBadge').value = p.badge || '';
             document.getElementById('prodImage').value = p.image;
             document.getElementById('prodStatus').value = p.status || 'available';
+            document.getElementById('prodIsOnSale').checked = !!p.isOnSale;
+            document.getElementById('prodOriginalPrice').value = p.originalPrice || '';
 
+            togglePromoInputDisplay();
             updateImagePreview();
             openProductModal(true);
         }
@@ -420,17 +478,20 @@
             const badge = document.getElementById('prodBadge').value.trim() || 'Destaque';
             const image = document.getElementById('prodImage').value.trim();
             const status = document.getElementById('prodStatus').value;
+            const isOnSale = document.getElementById('prodIsOnSale').checked;
+            const origVal = parseFloat(document.getElementById('prodOriginalPrice').value);
+            const originalPrice = (isOnSale && !isNaN(origVal)) ? origVal : null;
 
             if (id) {
                 // Editar existente
                 const index = adminProducts.findIndex(p => p.id == id);
                 if (index !== -1) {
-                    adminProducts[index] = { id: parseInt(id), name, subtitle, category, badge, price, image, status };
+                    adminProducts[index] = { id: parseInt(id), name, subtitle, category, badge, price, image, status, isOnSale, originalPrice };
                 }
             } else {
                 // Adicionar novo
                 const maxId = adminProducts.reduce((max, item) => item.id > max ? item.id : max, 0);
-                adminProducts.push({ id: maxId + 1, name, subtitle, category, badge, price, image, status });
+                adminProducts.push({ id: maxId + 1, name, subtitle, category, badge, price, image, status, isOnSale, originalPrice });
             }
 
             renderAdminTable(adminProducts);

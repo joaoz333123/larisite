@@ -249,9 +249,16 @@
             // Filtrar produtos que estão ocultos do catálogo público
             const visibleItems = items.filter(p => (p.status || 'available') !== 'hidden');
 
-            if (counter) counter.innerText = `Exibindo ${visibleItems.length} itens`;
+            // Ordenar produtos: Promoções no topo
+            const sortedItems = [...visibleItems].sort((a, b) => {
+                const aSale = a.isOnSale ? 1 : 0;
+                const bSale = b.isOnSale ? 1 : 0;
+                return bSale - aSale;
+            });
 
-            if (visibleItems.length === 0) {
+            if (counter) counter.innerText = `Exibindo ${sortedItems.length} itens`;
+
+            if (sortedItems.length === 0) {
                 container.innerHTML = `
                     <div class="col-span-full py-12 text-center text-gray-500">
                         <i class="fa-solid fa-box-open text-4xl mb-2 text-gray-300"></i>
@@ -261,16 +268,22 @@
                 return;
             }
 
-            container.innerHTML = visibleItems.map(item => {
+            container.innerHTML = sortedItems.map(item => {
                 const isOutOfStock = (item.status === 'out_of_stock');
+                const isOnSale = !!item.isOnSale;
                 return `
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden flex flex-col justify-between transition group ${isOutOfStock ? 'opacity-85' : ''}">
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md border ${isOnSale ? 'border-amber-300 ring-1 ring-amber-300/50' : 'border-gray-100'} overflow-hidden flex flex-col justify-between transition group ${isOutOfStock ? 'opacity-85' : ''}">
                     <div>
                         <!-- Product Image Box -->
                         <div class="relative bg-gray-50 aspect-square p-4 flex items-center justify-center overflow-hidden">
                             <span class="absolute top-2 left-2 z-10 bg-brand-dark/90 text-brand-gold text-[10px] font-bold uppercase px-2 py-0.5 rounded tracking-wider">
                                 ${item.badge}
                             </span>
+                            ${isOnSale ? `
+                            <span class="absolute top-2 ${isOutOfStock ? 'right-28' : 'right-2'} z-10 bg-amber-500 text-white text-[10px] font-extrabold uppercase px-2 py-0.5 rounded shadow flex items-center gap-1 animate-pulse">
+                                <i class="fa-solid fa-fire text-[9px]"></i> Oferta
+                            </span>
+                            ` : ''}
                             ${isOutOfStock ? `
                             <span class="absolute top-2 right-2 z-10 bg-red-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded shadow flex items-center gap-1">
                                 <i class="fa-solid fa-circle-exclamation text-[9px]"></i> Sem Estoque
@@ -295,8 +308,17 @@
 
                     <!-- Price & Action -->
                     <div class="p-3 sm:p-4 pt-0">
-                        <div class="text-brand-dark font-extrabold text-sm sm:text-base mb-2">
-                            R$ ${item.price.toFixed(2).replace('.', ',')}
+                        <div class="mb-2">
+                            ${isOnSale && item.originalPrice ? `
+                            <div class="flex items-baseline gap-1.5 flex-wrap">
+                                <span class="text-xs text-gray-400 line-through font-medium">R$ ${Number(item.originalPrice).toFixed(2).replace('.', ',')}</span>
+                                <span class="text-red-600 font-extrabold text-sm sm:text-base">R$ ${Number(item.price).toFixed(2).replace('.', ',')}</span>
+                            </div>
+                            ` : `
+                            <div class="text-brand-dark font-extrabold text-sm sm:text-base">
+                                R$ ${Number(item.price).toFixed(2).replace('.', ',')}
+                            </div>
+                            `}
                         </div>
                         ${isOutOfStock ? `
                         <button disabled class="w-full bg-gray-200 text-gray-500 font-semibold py-2 px-3 rounded-lg text-xs cursor-not-allowed uppercase flex items-center justify-center gap-1.5 border border-gray-300">

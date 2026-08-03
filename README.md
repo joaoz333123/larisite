@@ -81,9 +81,10 @@ graph TD
 | :--- | :--- |
 | **Listagem & Contador** | Exibe todos os produtos cadastrados com foto, nome, categoria, selo, status e preço. |
 | **Controle de Status** | Permite definir cada produto como **🟢 Disponível**, **🟡 Sem Estoque** ou **🔴 Oculto**. |
+| **Gestão de Promoções** | Permite ativar produtos em promoção, definir preço original (de) x promocional (por) com botão de atalho `🏷️` rápido. |
 | **Alternância de Status em 1 Clique** | Botão de rotação rápida na tabela para alternar o status instantaneamente. |
-| **Busca Interna** | Filtra os produtos da tabela por nome, subtítulo, selo ou status ("sem estoque", "oculto"). |
-| **Formulário Modal (Criar/Editar)** | Interface modal para inserir ou alterar todos os atributos do produto, incluindo status e foto. |
+| **Busca Interna** | Filtra os produtos da tabela por nome, subtítulo, selo, status ou termo "promoção". |
+| **Formulário Modal (Criar/Editar)** | Interface modal para inserir ou alterar todos os atributos do produto, incluindo preço promocional, status e foto. |
 | **Exclusão com Confirmação** | Remove itens do catálogo com alerta de confirmação. |
 | **Configuração de Token GitHub** | Permite inserir e atualizar o Token de Acesso Pessoal (PAT) do GitHub de forma segura. |
 | **Publicação Serverless** | Converte a lista atualizada em string JS, obtém o `sha` atual via API do GitHub e envia uma requisição `PUT` para sobrescrever o arquivo no repositório. |
