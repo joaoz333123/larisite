@@ -353,5 +353,14 @@ const products = [
         "badge": "Importado Orig.",
         "price": 69.9,
         "image": "https://acdn-us.mitiendanube.com/stores/004/134/460/products/img_0582-949e98d7758862f60117374733320863-1024-1024.webp"
+    },
+    {
+        "id": 41,
+        "name": "C'Est La Vie Dream",
+        "subtitle": "Body Lotion 200ml",
+        "category": "cremes",
+        "badge": "loção hidratante",
+        "price": 89.9,
+        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1366114-800-800/17677173928800.jpg?v=639033823851800000"
     }
 ];
