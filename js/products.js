@@ -317,5 +317,14 @@ const products = [
         "badge": "Árabe",
         "price": 279.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1333447-800-800/17653114059844.jpg?v=639009661903100000"
+    },
+    {
+        "id": 37,
+        "name": "Asad Bourbon Lattafa",
+        "subtitle": "Eau de Parfum Masculino 100 ml",
+        "category": "perfumes",
+        "badge": "Árabe",
+        "price": 289.9,
+        "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1208034-800-800/17619441430162.jpg?v=638984036627630000"
     }
 ];
