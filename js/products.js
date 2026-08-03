@@ -299,5 +299,14 @@ const products = [
         "badge": "Árabe",
         "price": 249.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2384948-450-450/17810523151528.jpg?v=639167770290970000"
+    },
+    {
+        "id": 35,
+        "name": "Desodorante Hayaati Lattafa",
+        "subtitle": "Desodorante Spray 200ml",
+        "category": "perfumes",
+        "badge": "Árabe",
+        "price": 39.9,
+        "image": "https://imageswscdn.wslojas.com.br/files/2940/MED_produto-desodorante-hayaati-lattafa-masculino-200ml-perfumes-arabes-lattafa-no-atacado-3829390352.webp"
     }
 ];
