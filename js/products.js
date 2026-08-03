@@ -434,5 +434,14 @@ const products = [
         "badge": "Importado Orig.",
         "price": 39.9,
         "image": "https://images.tcdn.com.br/img/img_prod/1241189/desodorante_unisex_rabe_lattafa_fakhar_gold_extrai_2_20260424090144_718e1067c904.jpg"
+    },
+    {
+        "id": 50,
+        "name": "Desodorante Lattafa Teriaq Unissex",
+        "subtitle": "Perfume spray 200ml",
+        "category": "sprays",
+        "badge": "Importado Orig.",
+        "price": 39.9,
+        "image": "https://cdn.atacadoconnect.com/produtos/1371734/desodorante-lattafa-teriaq-unissex-200ml-1371734-5oa9b.webp"
     }
 ];
