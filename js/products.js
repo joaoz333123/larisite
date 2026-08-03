@@ -443,5 +443,14 @@ const products = [
         "badge": "Importado Orig.",
         "price": 39.9,
         "image": "https://cdn.atacadoconnect.com/produtos/1371734/desodorante-lattafa-teriaq-unissex-200ml-1371734-5oa9b.webp"
+    },
+    {
+        "id": 51,
+        "name": "Angham Deodorant Spray feminino",
+        "subtitle": "Perfume spray 200ml",
+        "category": "sprays",
+        "badge": "Importado Orig.",
+        "price": 39.9,
+        "image": "https://www.intenseoud.com/cdn/shop/files/2_b619787c-9c53-496b-8c0c-c23a3ed628c2.webp?v=1774802331"
     }
 ];
