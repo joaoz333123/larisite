@@ -464,7 +464,7 @@ const products = [
         "price": 39.9,
         "image": "https://www.intenseoud.com/cdn/shop/files/2_b619787c-9c53-496b-8c0c-c23a3ed628c2.webp?v=1774802331",
         "status": "available",
-        "isOnSale": true,
+        "isOnSale": false,
         "originalPrice": 49.88
     },
     {
@@ -476,7 +476,7 @@ const products = [
         "price": 69.9,
         "image": "https://www.brandcollectionatacado.com.br/body-splash-shimmer-dream-brand-collection-bare-vanilla-feminino-250ml/?srsltid=AfmBOooiuKHHK8G6NDpV5KGxZv77F5VUMsJBhx0SWWx99jKTNrYDNApe",
         "status": "available",
-        "isOnSale": true,
+        "isOnSale": false,
         "originalPrice": 87.38
     },
     {
@@ -487,8 +487,8 @@ const products = [
         "badge": "Importado Orig.",
         "price": 69.9,
         "image": "https://acdn-us.mitiendanube.com/stores/004/512/690/products/5e2262ca-f3b1-439f-a117-6ab221afa887-aa1d68725725d32ea317641821666266-1024-1024.webp",
-        "status": "out_of_stock",
-        "isOnSale": true,
+        "status": "available",
+        "isOnSale": false,
         "originalPrice": 87.38
     }
 ];
