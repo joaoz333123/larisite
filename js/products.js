@@ -290,5 +290,14 @@ const products = [
         "badge": "Importado Orig.",
         "price": 389.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/619680-450-450/essential--lacoste-perfume-masculino-eau-te-toilette--4-.jpg?v=638858741760400000"
+    },
+    {
+        "id": 34,
+        "name": "Hayaati Lattafa Masculino",
+        "subtitle": "Eau de Parfum 100ml",
+        "category": "perfumes",
+        "badge": "Árabe",
+        "price": 249.9,
+        "image": "https://tuzzut.com/products/hayaati-edp-perfume-100ml-by-lattafa?srsltid=AfmBOoqF0r4SbvYbiGh6rK6nZmIYWu9dUMbbLb54TnZPUgl_h9Ao32bz"
     }
 ];
