@@ -425,5 +425,14 @@ const products = [
         "badge": "Importado Orig.",
         "price": 39.9,
         "image": "https://images.tcdn.com.br/img/img_prod/1241189/desodorante_masculino_rabe_lattafa_fakhar_black_20_3_20260423125435_d1b844d8543f.jpg"
+    },
+    {
+        "id": 49,
+        "name": "Desodorante Unisex Árabe Lattafa Fakhar Gold Extrait",
+        "subtitle": "Perfume spray 200ml",
+        "category": "sprays",
+        "badge": "Importado Orig.",
+        "price": 39.9,
+        "image": "https://images.tcdn.com.br/img/img_prod/1241189/desodorante_unisex_rabe_lattafa_fakhar_gold_extrai_2_20260424090144_718e1067c904.jpg"
     }
 ];
