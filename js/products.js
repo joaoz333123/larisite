@@ -638,5 +638,17 @@ const products = [
         "status": "available",
         "isOnSale": true,
         "originalPrice": 199.9
+    },
+    {
+        "id": 55,
+        "name": "Lattafa Asad Zanzibar",
+        "subtitle": "Eau De Parfum 100 Ml",
+        "category": "perfumes",
+        "badge": "Árabe",
+        "price": 189.9,
+        "image": "https://imgs.casasbahia.com.br/1571506984/1xg.jpg?imwidth=500",
+        "status": "available",
+        "isOnSale": false,
+        "originalPrice": null
     }
 ];
