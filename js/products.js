@@ -69,11 +69,11 @@ const products = [
         "subtitle": "Pink Gold EDP 100ml",
         "category": "perfumes",
         "badge": "Importado Orig.",
-        "price": 149.9,
+        "price": 119.9,
         "image": "https://parfumneked.hu/parfumneked/wp-content/uploads/2019/12/MASTER-pink-gold.jpg",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 119.9
+        "originalPrice": 149.9
     },
     {
         "id": 7,
