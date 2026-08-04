@@ -333,11 +333,11 @@ const products = [
         "subtitle": "Pride  Of Lattafa  200ML",
         "category": "sprays",
         "badge": "Arábe",
-        "price": 200,
+        "price": 39.9,
         "image": "https://dcdn-us.mitiendanube.com/stores/006/005/014/products/6-f8260587711deae38917579529542298-1024-1024.webp",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 250
+        "originalPrice": 59.9
     },
     {
         "id": 30,
