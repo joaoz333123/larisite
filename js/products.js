@@ -21,11 +21,11 @@ const products = [
         "subtitle": "Fakhar Rose 100ml",
         "category": "perfumes",
         "badge": "Mais Vendido",
-        "price": 278.5,
+        "price": 279.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2646704/17582505965066.jpg?v=639190373067270000",
         "status": "available",
-        "isOnSale": true,
-        "originalPrice": 279.9
+        "isOnSale": false,
+        "originalPrice": null
     },
     {
         "id": 3,
@@ -36,7 +36,7 @@ const products = [
         "price": 179.99,
         "image": "https://assets.kenzz.com/processed/35c7a96219bba97fb726c7b4b4c8d63a8505a3f518830e530b48ac0bf3968807_1200.webp",
         "status": "available",
-        "isOnSale": true,
+        "isOnSale": false,
         "originalPrice": 199.88
     },
     {
@@ -600,7 +600,7 @@ const products = [
         "price": 39.9,
         "image": "https://www.intenseoud.com/cdn/shop/files/2_b619787c-9c53-496b-8c0c-c23a3ed628c2.webp?v=1774802331",
         "status": "available",
-        "isOnSale": true,
+        "isOnSale": false,
         "originalPrice": 49.88
     },
     {
@@ -611,8 +611,8 @@ const products = [
         "badge": "Destaque",
         "price": 69.9,
         "image": "https://www.brandcollectionatacado.com.br/body-splash-shimmer-dream-brand-collection-bare-vanilla-feminino-250ml/?srsltid=AfmBOooiuKHHK8G6NDpV5KGxZv77F5VUMsJBhx0SWWx99jKTNrYDNApe",
-        "status": "out_of_stock",
-        "isOnSale": true,
+        "status": "hidden",
+        "isOnSale": false,
         "originalPrice": 87.38
     },
     {
@@ -624,7 +624,7 @@ const products = [
         "price": 69.9,
         "image": "https://acdn-us.mitiendanube.com/stores/004/512/690/products/5e2262ca-f3b1-439f-a117-6ab221afa887-aa1d68725725d32ea317641821666266-1024-1024.webp",
         "status": "available",
-        "isOnSale": true,
+        "isOnSale": false,
         "originalPrice": 87.38
     }
 ];
