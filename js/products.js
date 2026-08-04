@@ -633,10 +633,10 @@ const products = [
         "subtitle": "Eau de Parfum 100ml",
         "category": "perfumes",
         "badge": "Importado Orig.",
-        "price": 199.9,
+        "price": 169.9,
         "image": "https://us-i.makeupstore.com/t/tf/tfo2wzswfl3m.jpg",
         "status": "available",
-        "isOnSale": false,
-        "originalPrice": null
+        "isOnSale": true,
+        "originalPrice": 199.9
     }
 ];
