@@ -332,7 +332,7 @@ const products = [
         "name": "Lattafa Fakhar",
         "subtitle": "Pride  Of Lattafa  200ML",
         "category": "sprays",
-        "badge": "Desodorsnte Spray",
+        "badge": "Arábe",
         "price": 200,
         "image": "https://dcdn-us.mitiendanube.com/stores/006/005/014/products/6-f8260587711deae38917579529542298-1024-1024.webp",
         "status": "available",
