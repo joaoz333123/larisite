@@ -533,10 +533,10 @@ const products = [
     },
     {
         "id": 46,
-        "name": "Lattafa Mayar All Over Spray",
+        "name": "Lattafa Mayar All Over Spray/Corpo e cabelo",
         "subtitle": "Body sprays  150ml",
         "category": "sprays",
-        "badge": "Cabelo e corpo",
+        "badge": "Importado Orig.",
         "price": 99.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1447912-450-450/17706712692622.jpg?v=639066443778070000",
         "status": "available",
