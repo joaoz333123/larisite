@@ -117,11 +117,11 @@ const products = [
         "subtitle": "Eau de Parfum 100ml",
         "category": "perfumes",
         "badge": "Árabe",
-        "price": 169.9,
+        "price": 139.9,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkdMqK5LJeHbcGkuiWTFG_NmiDeql_AB8xavff-NnqTQ&s=10",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 139.9
+        "originalPrice": 169.9
     },
     {
         "id": 11,
