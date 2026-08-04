@@ -225,11 +225,11 @@ const products = [
         "subtitle": "100 ml",
         "category": "perfumes",
         "badge": "Importado Orig.",
-        "price": 119.9,
+        "price": 129.9,
         "image": "https://m.media-amazon.com/images/I/61Sjd2C-gUL._AC_SL1000_.jpg",
         "status": "available",
-        "isOnSale": false,
-        "originalPrice": null
+        "isOnSale": true,
+        "originalPrice": 99.9
     },
     {
         "id": 21,
