@@ -359,7 +359,7 @@ const products = [
         "badge": "Mais Vendido",
         "price": 359.9,
         "image": "https://down-br.img.susercontent.com/file/br-11134207-820mh-mofwd62mbmdi08@resize_w900_nl.webp",
-        "status": "available",
+        "status": "hidden",
         "isOnSale": false,
         "originalPrice": null
     },
