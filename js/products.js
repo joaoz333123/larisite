@@ -465,11 +465,11 @@ const products = [
         "subtitle": "Dream Brand Collection 250ml",
         "category": "sprays",
         "badge": "Importado Orig.",
-        "price": 69.9,
+        "price": 65,
         "image": "https://acdn-us.mitiendanube.com/stores/004/134/460/products/img_0582-949e98d7758862f60117374733320863-1024-1024.webp",
         "status": "available",
-        "isOnSale": false,
-        "originalPrice": null
+        "isOnSale": true,
+        "originalPrice": 79.9
     },
     {
         "id": 41,
