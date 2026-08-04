@@ -626,5 +626,17 @@ const products = [
         "status": "available",
         "isOnSale": false,
         "originalPrice": 87.38
+    },
+    {
+        "id": 54,
+        "name": "Autobiography Salty breeze",
+        "subtitle": "Eau de Parfum 100ml",
+        "category": "perfumes",
+        "badge": "Importado Orig.",
+        "price": 199.9,
+        "image": "https://us-i.makeupstore.com/t/tf/tfo2wzswfl3m.jpg",
+        "status": "available",
+        "isOnSale": false,
+        "originalPrice": null
     }
 ];
