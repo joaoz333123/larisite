@@ -100,18 +100,6 @@ const products = [
         "originalPrice": null
     },
     {
-        "id": 9,
-        "name": "Lattafa Perfumes Asad Zanzibar",
-        "subtitle": "Eau de Parfum 100ml",
-        "category": "perfumes",
-        "badge": "Lançamento",
-        "price": 199.9,
-        "image": "https://www.drogasil.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F17031470.webp&w=3840&q=40",
-        "status": "available",
-        "isOnSale": false,
-        "originalPrice": null
-    },
-    {
         "id": 10,
         "name": "Sahari Collections Blue Sultan",
         "subtitle": "Eau de Parfum 100ml",
@@ -614,18 +602,6 @@ const products = [
         "status": "available",
         "isOnSale": false,
         "originalPrice": null
-    },
-    {
-        "id": 53,
-        "name": "Body Splash Shimmer Dream Brand Collection Bare Vanilla Feminino 250ml",
-        "subtitle": "Feminino 250ml",
-        "category": "sprays",
-        "badge": "Importado Orig.",
-        "price": 69.9,
-        "image": "https://acdn-us.mitiendanube.com/stores/004/512/690/products/5e2262ca-f3b1-439f-a117-6ab221afa887-aa1d68725725d32ea317641821666266-1024-1024.webp",
-        "status": "available",
-        "isOnSale": false,
-        "originalPrice": 87.38
     },
     {
         "id": 54,
