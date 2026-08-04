@@ -407,7 +407,7 @@ const products = [
         "badge": "Árabe",
         "price": 39.9,
         "image": "https://imageswscdn.wslojas.com.br/files/2940/MED_produto-desodorante-hayaati-lattafa-masculino-200ml-perfumes-arabes-lattafa-no-atacado-3829390352.webp",
-        "status": "available",
+        "status": "out_of_stock",
         "isOnSale": false,
         "originalPrice": null
     },
