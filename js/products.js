@@ -68,7 +68,7 @@ const products = [
         "name": "New Brand Master Of Essence",
         "subtitle": "Pink Gold EDP 100ml",
         "category": "perfumes",
-        "badge": "Feminino",
+        "badge": "Importado Orig.",
         "price": 129.9,
         "image": "https://parfumneked.hu/parfumneked/wp-content/uploads/2019/12/MASTER-pink-gold.jpg",
         "status": "available",
