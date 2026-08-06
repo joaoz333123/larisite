@@ -32,12 +32,12 @@ const products = [
         "name": "Sahari Collections Malik Al Sharq",
         "subtitle": "Eau de Parfum 100ml",
         "category": "perfumes",
-        "badge": "Árabe",
+        "badge": "Árabe Premium",
         "price": 179.99,
         "image": "https://assets.kenzz.com/processed/35c7a96219bba97fb726c7b4b4c8d63a8505a3f518830e530b48ac0bf3968807_1200.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": 199.88
     },
     {
         "id": 4,
@@ -95,6 +95,18 @@ const products = [
         "badge": "Masculino",
         "price": 359.9,
         "image": "https://cz.diesel.com/dw/image/v2/BBLG_PRD/on/demandware.static/-/Sites-diesel-master-catalog/default/dwcc19b0e9/images/large/PL0633_00PRO_01_E.jpg?q=80",
+        "status": "available",
+        "isOnSale": false,
+        "originalPrice": null
+    },
+    {
+        "id": 9,
+        "name": "Lattafa Perfumes Asad Zanzibar",
+        "subtitle": "Eau de Parfum 100ml",
+        "category": "perfumes",
+        "badge": "Lançamento",
+        "price": 199.9,
+        "image": "https://www.drogasil.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F17031470.webp&w=3840&q=40",
         "status": "available",
         "isOnSale": false,
         "originalPrice": null
@@ -203,7 +215,7 @@ const products = [
         "badge": "Árabe",
         "price": 329.9,
         "image": "https://t34114.vtexassets.com/arquivos/ids/303685/perfume-lattafa-musamam-white-intense-edp-100ml.jpg?v=639192808941100000",
-        "status": "out_of_stock",
+        "status": "available",
         "isOnSale": true,
         "originalPrice": 399.9
     },
@@ -321,11 +333,11 @@ const products = [
         "subtitle": "Pride  Of Lattafa  200ML",
         "category": "sprays",
         "badge": "Arábe",
-        "price": 39.9,
+        "price": 200,
         "image": "https://dcdn-us.mitiendanube.com/stores/006/005/014/products/6-f8260587711deae38917579529542298-1024-1024.webp",
-        "status": "out_of_stock",
-        "isOnSale": true,
-        "originalPrice": 59.9
+        "status": "available",
+        "isOnSale": false,
+        "originalPrice": null
     },
     {
         "id": 30,
@@ -503,7 +515,7 @@ const products = [
         "badge": "Miniatura Unisex",
         "price": 59.9,
         "image": "https://cdnx.jumpseller.com/nym-perfumeria/image/66938543/resize/610/610?1756249188",
-        "status": "available",
+        "status": "out_of_stock",
         "isOnSale": false,
         "originalPrice": null
     },
@@ -604,6 +616,18 @@ const products = [
         "originalPrice": null
     },
     {
+        "id": 53,
+        "name": "Body Splash Shimmer Dream Brand Collection Bare Vanilla Feminino 250ml",
+        "subtitle": "Feminino 250ml",
+        "category": "sprays",
+        "badge": "Importado Orig.",
+        "price": 69.9,
+        "image": "https://acdn-us.mitiendanube.com/stores/004/512/690/products/5e2262ca-f3b1-439f-a117-6ab221afa887-aa1d68725725d32ea317641821666266-1024-1024.webp",
+        "status": "available",
+        "isOnSale": false,
+        "originalPrice": 87.38
+    },
+    {
         "id": 54,
         "name": "Autobiography Salty breeze",
         "subtitle": "Eau de Parfum 100ml",
@@ -617,12 +641,12 @@ const products = [
     },
     {
         "id": 55,
-        "name": "Lattafa Asad Zanzibar",
-        "subtitle": "Eau De Parfum 100 Ml",
+        "name": "Orientica Luxury Collection Exclusive Dania",
+        "subtitle": "Eau de parfum",
         "category": "perfumes",
-        "badge": "Árabe",
-        "price": 189.9,
-        "image": "https://imgs.casasbahia.com.br/1571506984/1xg.jpg?imwidth=500",
+        "badge": "ÁRABE",
+        "price": 599.9,
+        "image": "https://acdn-us.mitiendanube.com/stores/001/775/241/products/44e8ea2c61c87233be4ac050a1a00a05-c72da272fd871c47d217661785904769-1024-1024.webp",
         "status": "available",
         "isOnSale": false,
         "originalPrice": null
