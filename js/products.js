@@ -645,10 +645,10 @@ const products = [
         "subtitle": "Eau de parfum",
         "category": "perfumes",
         "badge": "ÁRABE Premium",
-        "price": 599.9,
+        "price": 699.9,
         "image": "https://acdn-us.mitiendanube.com/stores/001/775/241/products/44e8ea2c61c87233be4ac050a1a00a05-c72da272fd871c47d217661785904769-1024-1024.webp",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 749.88
+        "originalPrice": 874.88
     }
 ];
