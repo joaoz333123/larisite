@@ -645,10 +645,22 @@ const products = [
         "subtitle": "Eau de parfum",
         "category": "perfumes",
         "badge": "ÁRABE Premium",
-        "price": 699.9,
+        "price": 799.9,
         "image": "https://acdn-us.mitiendanube.com/stores/001/775/241/products/44e8ea2c61c87233be4ac050a1a00a05-c72da272fd871c47d217661785904769-1024-1024.webp",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 874.88
+        "originalPrice": 1400
+    },
+    {
+        "id": 56,
+        "name": "Orientica Royal Amber Eau de Parfu",
+        "subtitle": "Eau de Parfum Unissex 80 ml",
+        "category": "perfumes",
+        "badge": "Árabe Premium",
+        "price": 699.9,
+        "image": "https://webimportbrasil.com.br/wp-content/uploads/ROYAL.webp",
+        "status": "available",
+        "isOnSale": true,
+        "originalPrice": 1099
     }
 ];
