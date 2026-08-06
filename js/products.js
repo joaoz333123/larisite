@@ -323,7 +323,7 @@ const products = [
         "badge": "Arábe",
         "price": 39.9,
         "image": "https://dcdn-us.mitiendanube.com/stores/006/005/014/products/6-f8260587711deae38917579529542298-1024-1024.webp",
-        "status": "available",
+        "status": "out_of_stock",
         "isOnSale": true,
         "originalPrice": 59.9
     },
