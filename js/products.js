@@ -491,7 +491,7 @@ const products = [
         "badge": "Miniatura masc",
         "price": 59.9,
         "image": "https://cdnx.jumpseller.com/perfumesdelujo/image/66929358/resize/610/610?1756226929",
-        "status": "available",
+        "status": "out_of_stock",
         "isOnSale": false,
         "originalPrice": null
     },
