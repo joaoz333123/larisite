@@ -361,7 +361,7 @@ const products = [
         "image": "https://down-br.img.susercontent.com/file/br-11134207-820mh-mofwd62mbmdi08@resize_w900_nl.webp",
         "status": "hidden",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": 449.88
     },
     {
         "id": 32,
@@ -636,7 +636,7 @@ const products = [
         "price": 169.9,
         "image": "https://us-i.makeupstore.com/t/tf/tfo2wzswfl3m.jpg",
         "status": "available",
-        "isOnSale": true,
+        "isOnSale": false,
         "originalPrice": 199.9
     },
     {
