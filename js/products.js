@@ -203,7 +203,7 @@ const products = [
         "badge": "Árabe",
         "price": 329.9,
         "image": "https://t34114.vtexassets.com/arquivos/ids/303685/perfume-lattafa-musamam-white-intense-edp-100ml.jpg?v=639192808941100000",
-        "status": "available",
+        "status": "out_of_stock",
         "isOnSale": true,
         "originalPrice": 399.9
     },
