@@ -193,6 +193,64 @@
         </div>
     </div>
 
+    <!-- Product Detail Modal -->
+    <div id="productDetailModal" onclick="if(event.target === this) closeProductDetail()" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="productDetailPanel" class="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden flex flex-col max-h-[90vh] transform scale-95 transition-transform duration-300">
+            <!-- Modal Header -->
+            <div class="p-4 bg-brand-dark text-white flex items-center justify-between border-b border-gray-800">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info text-brand-gold"></i>
+                    <h2 class="font-bold text-base">Detalhes do Produto</h2>
+                </div>
+                <button onclick="closeProductDetail()" class="text-gray-400 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content (Scrollable) -->
+            <div class="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
+                <!-- Image box -->
+                <div class="bg-gray-50 aspect-square max-h-72 p-4 flex items-center justify-center rounded-xl border border-gray-100 overflow-hidden relative">
+                    <span id="modalProductBadge" class="absolute top-3 left-3 bg-brand-dark/90 text-brand-gold text-[10px] font-bold uppercase px-2 py-0.5 rounded tracking-wider"></span>
+                    <span id="modalProductPromo" class="absolute top-3 right-3 bg-amber-500 text-white text-[10px] font-extrabold uppercase px-2 py-0.5 rounded shadow flex items-center gap-1 hidden">
+                        <i class="fa-solid fa-fire text-[9px]"></i> Oferta
+                    </span>
+                    <img id="modalProductImage" src="" alt="" class="object-contain h-full w-full max-h-64">
+                </div>
+
+                <!-- Info -->
+                <div>
+                    <span id="modalProductCategory" class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider block mb-1"></span>
+                    <h3 id="modalProductName" class="font-extrabold text-gray-900 text-lg leading-snug"></h3>
+                    <p id="modalProductSubtitle" class="text-sm text-gray-500 mt-0.5"></p>
+                </div>
+
+                <!-- Price Box -->
+                <div id="modalProductPriceBox" class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                    <!-- Price logic loaded dynamically -->
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <h4 class="font-bold text-gray-800 text-sm mb-1.5 flex items-center gap-1.5">
+                        <i class="fa-solid fa-align-left text-brand-gold"></i> Descrição
+                    </h4>
+                    <p id="modalProductDescription" class="text-xs text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-xl border border-gray-100 whitespace-pre-line"></p>
+                </div>
+            </div>
+
+            <!-- Modal Footer (Actions) -->
+            <div class="p-4 border-t border-gray-100 bg-gray-50 flex gap-3">
+                <button onclick="closeProductDetail()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2.5 rounded-lg text-xs uppercase transition tracking-wider">
+                    Fechar
+                </button>
+                <div id="modalProductActionContainer" class="flex-1">
+                    <!-- Add to cart button loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-brand-dark text-gray-300 mt-16 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -320,15 +378,20 @@
                             </div>
                             `}
                         </div>
-                        ${isOutOfStock ? `
-                        <button disabled class="w-full bg-gray-200 text-gray-500 font-semibold py-2 px-3 rounded-lg text-xs cursor-not-allowed uppercase flex items-center justify-center gap-1.5 border border-gray-300">
-                            <i class="fa-solid fa-ban text-[10px]"></i> Sem Estoque
-                        </button>
-                        ` : `
-                        <button onclick="addToCart(${item.id})" class="w-full bg-brand-dark hover:bg-brand-gold hover:text-brand-dark text-white font-semibold py-2 px-3 rounded-lg text-xs transition flex items-center justify-center gap-1.5 uppercase">
-                            <i class="fa-solid fa-plus text-[10px]"></i> Adicionar
-                        </button>
-                        `}
+                        <div class="grid grid-cols-2 gap-2">
+                            ${isOutOfStock ? `
+                            <button disabled class="bg-gray-100 text-gray-400 font-semibold py-2 px-1.5 rounded-lg text-[10px] sm:text-xs cursor-not-allowed uppercase flex items-center justify-center gap-1 border border-gray-200">
+                                <i class="fa-solid fa-ban text-[9px]"></i> Esgotado
+                            </button>
+                            ` : `
+                            <button onclick="addToCart(${item.id})" class="bg-brand-dark hover:bg-brand-gold hover:text-brand-dark text-white font-semibold py-2 px-1.5 rounded-lg text-[10px] sm:text-xs transition flex items-center justify-center gap-1 uppercase">
+                                <i class="fa-solid fa-plus text-[9px]"></i> Adicionar
+                            </button>
+                            `}
+                            <button onclick="openProductDetail(${item.id})" class="bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 font-semibold py-2 px-1.5 rounded-lg text-[10px] sm:text-xs transition flex items-center justify-center gap-1 uppercase">
+                                <i class="fa-solid fa-circle-info text-[9px] text-brand-gold"></i> Detalhes
+                            </button>
+                        </div>
                     </div>
                 </div>
             `}).join('');
@@ -479,6 +542,102 @@
 
             const encoded = encodeURIComponent(message);
             window.open(`https://wa.me/554499861288?text=${encoded}`, '_blank');
+        }
+
+        function openProductDetail(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            const modal = document.getElementById('productDetailModal');
+            const panel = document.getElementById('productDetailPanel');
+
+            // Fill Badge
+            const badgeEl = document.getElementById('modalProductBadge');
+            badgeEl.innerText = product.badge || 'Destaque';
+
+            // Promo banner
+            const promoEl = document.getElementById('modalProductPromo');
+            if (product.isOnSale) {
+                promoEl.classList.remove('hidden');
+            } else {
+                promoEl.classList.add('hidden');
+            }
+
+            // Image
+            const imgEl = document.getElementById('modalProductImage');
+            imgEl.src = product.image;
+            imgEl.alt = product.name;
+            imgEl.onerror = function() {
+                this.onerror = null;
+                this.src = 'https://via.placeholder.com/300x300?text=' + encodeURIComponent(product.name);
+            };
+
+            // Category
+            const catEl = document.getElementById('modalProductCategory');
+            catEl.innerText = product.category === 'perfumes' ? 'Perfume' : product.category === 'sprays' ? 'Body Spray' : 'Hidratante';
+
+            // Name & Subtitle
+            document.getElementById('modalProductName').innerText = product.name;
+            document.getElementById('modalProductSubtitle').innerText = product.subtitle;
+
+            // Price Box
+            const priceBox = document.getElementById('modalProductPriceBox');
+            if (product.isOnSale && product.originalPrice) {
+                priceBox.innerHTML = `
+                    <div class="text-[11px] text-gray-500 font-medium">De <span class="line-through">R$ ${Number(product.originalPrice).toFixed(2).replace('.', ',')}</span></div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-red-600 font-extrabold text-xl">Por R$ ${Number(product.price).toFixed(2).replace('.', ',')}</span>
+                        <span class="bg-amber-100 text-amber-800 text-[9px] font-extrabold px-1.5 py-0.5 rounded border border-amber-200 uppercase">Oferta Ativa</span>
+                    </div>
+                `;
+            } else {
+                priceBox.innerHTML = `
+                    <div class="text-[11px] text-gray-500 font-medium">Preço</div>
+                    <div class="text-brand-dark font-extrabold text-xl">R$ ${Number(product.price).toFixed(2).replace('.', ',')}</div>
+                `;
+            }
+
+            // Description
+            const descEl = document.getElementById('modalProductDescription');
+            if (product.description && product.description.trim() !== '') {
+                descEl.textContent = product.description.trim();
+                descEl.classList.remove('text-gray-400', 'italic');
+            } else {
+                descEl.textContent = 'Descrição em breve.';
+                descEl.classList.add('text-gray-400', 'italic');
+            }
+
+            // Action Container (Footer)
+            const actionContainer = document.getElementById('modalProductActionContainer');
+            const isOutOfStock = (product.status === 'out_of_stock');
+            if (isOutOfStock) {
+                actionContainer.innerHTML = `
+                    <button disabled class="w-full bg-gray-200 text-gray-400 border border-gray-300 font-semibold py-2.5 rounded-lg text-xs uppercase cursor-not-allowed flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-ban text-[10px]"></i> Esgotado
+                    </button>
+                `;
+            } else {
+                actionContainer.innerHTML = `
+                    <button onclick="addToCartAndClose(${product.id})" class="w-full bg-brand-dark hover:bg-brand-gold hover:text-brand-dark text-white font-bold py-2.5 rounded-lg text-xs transition uppercase flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-plus text-[10px]"></i> Adicionar
+                    </button>
+                `;
+            }
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            panel.classList.remove('scale-95');
+        }
+
+        function addToCartAndClose(id) {
+            addToCart(id);
+            closeProductDetail();
+        }
+
+        function closeProductDetail() {
+            const modal = document.getElementById('productDetailModal');
+            const panel = document.getElementById('productDetailPanel');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            panel.classList.add('scale-95');
         }
     </script>
 </body>
