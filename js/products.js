@@ -13,7 +13,8 @@ const products = [
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1065370/17581344811545.jpg?v=638939092407570000",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 2,
@@ -25,7 +26,8 @@ const products = [
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2646704/17582505965066.jpg?v=639190373067270000",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 3,
@@ -37,7 +39,8 @@ const products = [
         "image": "https://assets.kenzz.com/processed/35c7a96219bba97fb726c7b4b4c8d63a8505a3f518830e530b48ac0bf3968807_1200.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": 199.88
+        "originalPrice": 199.88,
+        "description": ""
     },
     {
         "id": 4,
@@ -47,9 +50,10 @@ const products = [
         "badge": "Importado Orig.",
         "price": 499.9,
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/485803-800-800/212-vip-men-carolina-hererra-100ml--3-.jpg?v=639192909607800000",
+        "status": "available",
         "isOnSale": false,
         "originalPrice": 624.88,
-        "status": "available"
+        "description": ""
     },
     {
         "id": 5,
@@ -59,9 +63,10 @@ const products = [
         "badge": "Exclusivo",
         "price": 159.9,
         "image": "https://www.lgimportados.com/produtos_img/9/0/0/1/5/7/IMG_900157_3.JPG",
+        "status": "available",
         "isOnSale": false,
         "originalPrice": 199.88,
-        "status": "available"
+        "description": ""
     },
     {
         "id": 6,
@@ -73,7 +78,8 @@ const products = [
         "image": "https://parfumneked.hu/parfumneked/wp-content/uploads/2019/12/MASTER-pink-gold.jpg",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 149.9
+        "originalPrice": 149.9,
+        "description": ""
     },
     {
         "id": 7,
@@ -85,7 +91,8 @@ const products = [
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU8Sd9CUk2uefhod_9qwmHfy2DFmL0t1WqHrMl95cPZjHVZxwELfeVwDnV&s=10",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 8,
@@ -97,7 +104,8 @@ const products = [
         "image": "https://cz.diesel.com/dw/image/v2/BBLG_PRD/on/demandware.static/-/Sites-diesel-master-catalog/default/dwcc19b0e9/images/large/PL0633_00PRO_01_E.jpg?q=80",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 9,
@@ -109,7 +117,8 @@ const products = [
         "image": "https://www.drogasil.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F17031470.webp&w=3840&q=40",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 10,
@@ -121,7 +130,8 @@ const products = [
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkdMqK5LJeHbcGkuiWTFG_NmiDeql_AB8xavff-NnqTQ&s=10",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 169.9
+        "originalPrice": 169.9,
+        "description": ""
     },
     {
         "id": 11,
@@ -133,7 +143,8 @@ const products = [
         "image": "https://assets.sistemawbuy.com.br/arquivos/2991e0dc262d35f367db71db5650f367/produtos/69b5588751194/15493845138-body-splash-dream-brand-collection-pure-seduction-feminino-250ml-3-69b558901881e.jpg",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 12,
@@ -145,7 +156,8 @@ const products = [
         "image": "https://images.tcdn.com.br/img/img_prod/1351546/perfume_lattafa_ana_abiyedh_rouge_all_over_spray_1_1_20260414182749_f6b3ea638402.png",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 13,
@@ -157,7 +169,8 @@ const products = [
         "image": "https://acdn-us.mitiendanube.com/stores/004/134/460/products/copia-de-produtos-site-jc-imports-0bcf9d3503c25b1c6317707343339354-1024-1024.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 14,
@@ -169,7 +182,8 @@ const products = [
         "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-lsj9nwp0wnqc17",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 15,
@@ -181,7 +195,8 @@ const products = [
         "image": "https://images.tcdn.com.br/img/img_prod/1348428/perfume_feminino_club_de_nuit_woman_eau_de_parfum_853353_1_1a83bb615f8bad669a370d9269d471f6.jpg",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 16,
@@ -193,7 +208,8 @@ const products = [
         "image": "https://images.tcdn.com.br/img/img_prod/1222831/club_de_nuit_intense_man_de_armaf_eau_de_toilette_753_1_6e290264ba5ce0345336ea2303ce0451.jpg",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 17,
@@ -205,7 +221,8 @@ const products = [
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1029615/17581340559327.jpg?v=638937308597370000",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 18,
@@ -217,7 +234,8 @@ const products = [
         "image": "https://t34114.vtexassets.com/arquivos/ids/303685/perfume-lattafa-musamam-white-intense-edp-100ml.jpg?v=639192808941100000",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 399.9
+        "originalPrice": 399.9,
+        "description": ""
     },
     {
         "id": 20,
@@ -229,7 +247,8 @@ const products = [
         "image": "https://m.media-amazon.com/images/I/61Sjd2C-gUL._AC_SL1000_.jpg",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 129.9
+        "originalPrice": 129.9,
+        "description": ""
     },
     {
         "id": 21,
@@ -241,7 +260,8 @@ const products = [
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDqOMZhWe2Y0R6XC6st4I79zmtw-wJjKZ_rl65dAcCbQ&s",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 22,
@@ -253,7 +273,8 @@ const products = [
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_960338-MLA111231794657_052026-F.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 23,
@@ -265,7 +286,8 @@ const products = [
         "image": "https://zaoud.it/cdn/shop/files/Lattafa-yara-all-over-spray-bottle-against-white-background.jpg?v=1748026970&width=990",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 24,
@@ -277,7 +299,8 @@ const products = [
         "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRx5ldXY-jsk4t6QVWAaAVmN8NB0uvq0tCeZ9S51gMOvksorcMuaWrrKCqJVsxU34L5pab6O7mYvYwz7zh56xWC4LeRgGx8Ag",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 25,
@@ -289,7 +312,8 @@ const products = [
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_797101-MLA108811455004_032026-F.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 26,
@@ -301,7 +325,8 @@ const products = [
         "image": "https://cdn.atacadoconnect.com/produtos/1390131/lotion-beauty-brand-c-079-sabah-al-wurud-200ml-1390131-ias8m.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 27,
@@ -313,7 +338,8 @@ const products = [
         "image": "https://cdn.atacadoconnect.com/produtos/1374872/perfume-beauty-brand-sabah-a-079-al-wurud-eau-de-parfum-feminino-25ml-1374872-n4ugp.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 28,
@@ -325,7 +351,8 @@ const products = [
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_636601-MLA113407917801_062026-F-spray-corpo-e-cabelo-fakhar-pride-of-lattafa-150ml.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 29,
@@ -337,7 +364,8 @@ const products = [
         "image": "https://dcdn-us.mitiendanube.com/stores/006/005/014/products/6-f8260587711deae38917579529542298-1024-1024.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 30,
@@ -349,7 +377,8 @@ const products = [
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_702031-MLA113714043249_062026-F.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 31,
@@ -361,7 +390,8 @@ const products = [
         "image": "https://down-br.img.susercontent.com/file/br-11134207-820mh-mofwd62mbmdi08@resize_w900_nl.webp",
         "status": "hidden",
         "isOnSale": false,
-        "originalPrice": 449.88
+        "originalPrice": 449.88,
+        "description": ""
     },
     {
         "id": 32,
@@ -373,7 +403,8 @@ const products = [
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_604282-MLA114529693767_072026-F.webp",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 129.9
+        "originalPrice": 129.9,
+        "description": ""
     },
     {
         "id": 33,
@@ -385,7 +416,8 @@ const products = [
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/619680-450-450/essential--lacoste-perfume-masculino-eau-te-toilette--4-.jpg?v=638858741760400000",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 34,
@@ -397,7 +429,8 @@ const products = [
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2384948-450-450/17810523151528.jpg?v=639167770290970000",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 35,
@@ -409,7 +442,8 @@ const products = [
         "image": "https://imageswscdn.wslojas.com.br/files/2940/MED_produto-desodorante-hayaati-lattafa-masculino-200ml-perfumes-arabes-lattafa-no-atacado-3829390352.webp",
         "status": "out_of_stock",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 36,
@@ -421,7 +455,8 @@ const products = [
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1333447-800-800/17653114059844.jpg?v=639009661903100000",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 37,
@@ -433,7 +468,8 @@ const products = [
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1208034-800-800/17619441430162.jpg?v=638984036627630000",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 38,
@@ -445,7 +481,8 @@ const products = [
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1292447-800-800/17581402187993.jpg?v=638998664982100000",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 39,
@@ -457,7 +494,8 @@ const products = [
         "image": "https://acdn-us.mitiendanube.com/stores/004/134/460/products/copia-de-produtos-site-jc-imports-c9469cea18ea0e2a2717707360567449-1024-1024.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 40,
@@ -469,7 +507,8 @@ const products = [
         "image": "https://acdn-us.mitiendanube.com/stores/004/134/460/products/img_0582-949e98d7758862f60117374733320863-1024-1024.webp",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 79.9
+        "originalPrice": 79.9,
+        "description": ""
     },
     {
         "id": 41,
@@ -481,7 +520,8 @@ const products = [
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1366114-800-800/17677173928800.jpg?v=639033823851800000",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 42,
@@ -493,7 +533,8 @@ const products = [
         "image": "https://cdnx.jumpseller.com/perfumesdelujo/image/66928091/resize/610/610?1756224251",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 43,
@@ -505,7 +546,8 @@ const products = [
         "image": "https://cdnx.jumpseller.com/perfumesdelujo/image/66929358/resize/610/610?1756226929",
         "status": "out_of_stock",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 44,
@@ -517,7 +559,8 @@ const products = [
         "image": "https://cdnx.jumpseller.com/nym-perfumeria/image/66938543/resize/610/610?1756249188",
         "status": "out_of_stock",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 45,
@@ -529,7 +572,8 @@ const products = [
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1179573-800-800/17618482033102.jpg?v=638975228506100000",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 46,
@@ -541,7 +585,8 @@ const products = [
         "image": "https://epocacosmeticos.vteximg.com.br/arquivos/ids/1447912-450-450/17706712692622.jpg?v=639066443778070000",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 47,
@@ -553,7 +598,8 @@ const products = [
         "image": "https://cdn.atacadoconnect.com/produtos/1379501/body-lotion-brand-collection-c-084-ndurrat-al-aroosah-200ml-1379501-cccqw.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 48,
@@ -565,7 +611,8 @@ const products = [
         "image": "https://images.tcdn.com.br/img/img_prod/1241189/desodorante_masculino_rabe_lattafa_fakhar_black_20_3_20260423125435_d1b844d8543f.jpg",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 49,
@@ -577,7 +624,8 @@ const products = [
         "image": "https://images.tcdn.com.br/img/img_prod/1241189/desodorante_unisex_rabe_lattafa_fakhar_gold_extrai_2_20260424090144_718e1067c904.jpg",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 50,
@@ -589,7 +637,8 @@ const products = [
         "image": "https://cdn.atacadoconnect.com/produtos/1371734/desodorante-lattafa-teriaq-unissex-200ml-1371734-5oa9b.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 51,
@@ -601,7 +650,8 @@ const products = [
         "image": "https://www.intenseoud.com/cdn/shop/files/2_b619787c-9c53-496b-8c0c-c23a3ed628c2.webp?v=1774802331",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": 49.88
+        "originalPrice": 49.88,
+        "description": ""
     },
     {
         "id": 52,
@@ -613,7 +663,8 @@ const products = [
         "image": "https://acdn-us.mitiendanube.com/stores/003/644/128/products/img_2518-1e48ec16183bda9eb317512482343535-1024-1024.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": null
+        "originalPrice": null,
+        "description": ""
     },
     {
         "id": 53,
@@ -625,7 +676,8 @@ const products = [
         "image": "https://acdn-us.mitiendanube.com/stores/004/512/690/products/5e2262ca-f3b1-439f-a117-6ab221afa887-aa1d68725725d32ea317641821666266-1024-1024.webp",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": 87.38
+        "originalPrice": 87.38,
+        "description": ""
     },
     {
         "id": 54,
@@ -637,7 +689,8 @@ const products = [
         "image": "https://us-i.makeupstore.com/t/tf/tfo2wzswfl3m.jpg",
         "status": "available",
         "isOnSale": false,
-        "originalPrice": 199.9
+        "originalPrice": 199.9,
+        "description": ""
     },
     {
         "id": 55,
@@ -649,7 +702,8 @@ const products = [
         "image": "https://acdn-us.mitiendanube.com/stores/001/775/241/products/44e8ea2c61c87233be4ac050a1a00a05-c72da272fd871c47d217661785904769-1024-1024.webp",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 1400
+        "originalPrice": 1400,
+        "description": ""
     },
     {
         "id": 56,
@@ -661,7 +715,8 @@ const products = [
         "image": "https://webimportbrasil.com.br/wp-content/uploads/ROYAL.webp",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 1099
+        "originalPrice": 1099,
+        "description": ""
     },
     {
         "id": 57,
@@ -673,6 +728,7 @@ const products = [
         "image": "https://cdn2.jomashop.com/media/catalog/product/cache/b3e31d40bbb1abcc90b26106659d5d3f/o/r/orientica-unisex-imperial-jade-extrait-de-parfum-spray-2-7-oz-fragrances-6297001158357_1.jpg?width=800&height=800",
         "status": "available",
         "isOnSale": true,
-        "originalPrice": 999.9
+        "originalPrice": 999.9,
+        "description": ""
     }
 ];
