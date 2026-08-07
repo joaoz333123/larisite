@@ -190,6 +190,727 @@
                 </div>
 
                 <div>
+                    <div class="flex justify-between items-center mb-1">
+                        <label class="block font-semibold text-xs text-gray-700">Descrição do Produto (Opcional)</label>
+                        <span id="prodDescriptionCount" class="text-[10px] text-gray-400">0 / 1000</span>
+                    </div>
+                    <textarea id="prodDescription" maxlength="1000" rows="4" oninput="updateDescriptionPreview()" placeholder="Escreva aqui detalhes sobre a fragrância, notas olfativas, fixação ou sugestão de uso..." 
+                        class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-brand-gold custom-scrollbar resize-none"></textarea>
+                </div>
+
+                <!-- Preview da Descrição -->
+                <div class="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-700 text-[11px] mb-1">Pré-visualização da Descrição</p>
+                    <div id="descriptionPreview" class="text-[11px] text-gray-500 italic leading-relaxed whitespace-pre-line">Nenhuma descrição informada.</div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-xs text-gray-700 mb-1">URL da Imagem da Foto *</label>
+                    <input type="url" id="prodImage" required placeholder="https://..." onchange="updateImagePreview()"
+                        class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-brand-gold">
+                </div>
+
+                <!-- Preview da Foto -->
+                <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                    <img id="imagePreview" src="https://via.placeholder.com/80?text=Preview" alt="Preview" class="w-14 h-14 object-contain bg-white rounded border border-gray-200 p-1">
+                    <div class="text-[11px] text-gray-500">
+                        <p class="font-semibold text-gray-700">Pré-visualização da Foto</p>
+                        <p>Certifique-se de que o link termine em formato de imagem (.jpg, .png, .webp).</p>
+                    </div>
+                </div>
+
+                <div class="pt-3 flex justify-end gap-2 border-t border-gray-100">
+                    <button type="button" onclick="closeProductModal()" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold text-xs hover:bg-gray-300">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="px-5 py-2 bg-brand-dark text-white rounded-lg font-bold text-xs hover:bg-black">
+                        Salvar Produto
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Configuração de Token GitHub -->
+    <div id="tokenModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-4">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                <h3 class="font-bold text-base text-gray-800 flex items-center gap-2">
+                    <i class="fa-solid fa-key text-brand-gold"></i> Chave do GitHub (Token)
+                </h3>
+                <button onclick="closeTokenModal()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed">
+                Esta chave autoriza o painel a salvar os dados diretamente no seu GitHub. Ela é salva <strong>apenas no seu navegador</strong> por segurança.
+            </p>
+            <div>
+                <label class="block font-semibold text-xs text-gray-700 mb-1">GitHub Personal Access Token</label>
+                <input type="password" id="githubTokenInput" placeholder="ghp_... ou github_pat_..." 
+                    class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-brand-gold">
+            </div>
+            <div class="flex justify-end gap-2 pt-2">
+                <button type="button" onclick="closeTokenModal()" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-xs font-semibold">Cancelar</button>
+                <button type="button" onclick="saveGitHubToken()" class="px-4 py-2 bg-brand-dark text-white rounded-lg text-xs font-bold hover:bg-black">Salvar Chave</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de Dados de Produtos -->
+    <script src="js/products.js?v=4"></script>
+
+    <!-- Script Lógica do Painel Admin -->
+    <script>
+        let adminProducts = [];
+        let hasLocalServer = false;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (typeof products !== 'undefined') {
+                adminProducts = JSON.parse(JSON.stringify(products));
+            }
+            renderAdminTable(adminProducts);
+            await checkServerEnvironment();
+        });
+
+        async function checkServerEnvironment() {
+            try {
+                const statusRes = await fetch('/api/status');
+                if (statusRes.ok) {
+                    const data = await statusRes.json();
+                    if (data.local) {
+                        hasLocalServer = true;
+                        updateStatusBannerForLocalServer();
+                        return;
+                    }
+                }
+            } catch (e) {
+                console.log('No local server detected, falling back to GitHub configuration.');
+            }
+            checkGitHubTokenStatus();
+        }
+
+        function updateStatusBannerForLocalServer() {
+            const banner = document.getElementById('statusBanner');
+            if (banner) {
+                banner.className = 'bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-emerald-800';
+                banner.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-emerald-500 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Servidor de Desenvolvimento Ativo</h4>
+                            <p class="text-xs text-emerald-700">As alterações serão salvas diretamente no arquivo local <strong>js/products.js</strong> no servidor.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="bg-emerald-100 text-emerald-800 text-[10px] px-2.5 py-1 rounded border border-emerald-200 font-semibold uppercase">Modo Local</span>
+                    </div>
+                `;
+            }
+        }
+
+        function checkGitHubTokenStatus() {
+            const token = localStorage.getItem('exato_github_token');
+            const banner = document.getElementById('statusBanner');
+            if (!banner) return;
+            if (token && token.trim() !== '') {
+                banner.className = 'bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-emerald-800';
+                banner.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-emerald-500 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Chave do GitHub conectada com sucesso</h4>
+                            <p class="text-xs text-emerald-700">Seu painel está pronto para publicar alterações automaticamente.</p>
+                        </div>
+                    </div>
+                    <button onclick="openTokenModal()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs px-3 py-1.5 rounded-lg transition whitespace-nowrap">
+                        Alterar Chave
+                    </button>
+                `;
+            } else {
+                banner.className = 'bg-amber-50 border border-amber-200 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-amber-800';
+                banner.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-500 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Chave do GitHub não configurada</h4>
+                            <p class="text-xs text-amber-700">Configure sua Chave (Token) para salvar alterações diretamente no site.</p>
+                        </div>
+                    </div>
+                    <button onclick="openTokenModal()" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs px-4 py-2 rounded-lg transition whitespace-nowrap">
+                        Inserir Token
+                    </button>
+                `;
+            }
+        }
+
+        function togglePromoInputDisplay() {
+            const isChecked = document.getElementById('prodIsOnSale').checked;
+            const container = document.getElementById('promoPriceContainer');
+            if (isChecked) {
+                container.classList.remove('hidden');
+            } else {
+                container.classList.add('hidden');
+            }
+        }
+
+        function renderAdminTable(items) {
+            const tbody = document.getElementById('adminProductsList');
+            const counter = document.getElementById('productCounter');
+            counter.innerText = items.length;
+
+            if (items.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" class="p-8 text-center text-gray-400">
+                            Nenhum produto encontrado no catálogo.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = items.map(item => {
+                const status = item.status || 'available';
+                let statusBadge = '';
+                if (status === 'available') {
+                    statusBadge = `<span class="bg-emerald-100 text-emerald-800 border border-emerald-200 px-2 py-0.5 rounded text-[10px] font-bold uppercase inline-flex items-center gap-1"><i class="fa-solid fa-circle text-[7px] text-emerald-500"></i> Disponível</span>`;
+                } else if (status === 'out_of_stock') {
+                    statusBadge = `<span class="bg-amber-100 text-amber-800 border border-amber-200 px-2 py-0.5 rounded text-[10px] font-bold uppercase inline-flex items-center gap-1"><i class="fa-solid fa-circle text-[7px] text-amber-500"></i> Sem Estoque</span>`;
+                } else {
+                    statusBadge = `<span class="bg-red-100 text-red-800 border border-red-200 px-2 py-0.5 rounded text-[10px] font-bold uppercase inline-flex items-center gap-1"><i class="fa-solid fa-eye-slash text-[7px] text-red-500"></i> Oculto</span>`;
+                }
+
+                const priceDisplay = (item.isOnSale && item.originalPrice) ? `
+                    <span class="line-through text-gray-400 text-[10px] block">De R$ ${Number(item.originalPrice).toFixed(2).replace('.', ',')}</span>
+                    <span class="text-red-600 font-extrabold text-xs">Por R$ ${Number(item.price).toFixed(2).replace('.', ',')}</span>
+                ` : `R$ ${Number(item.price).toFixed(2).replace('.', ',')}`;
+
+                const promoBadgeHtml = item.isOnSale ? `
+                    <span class="bg-amber-500 text-white px-1.5 py-0.5 rounded text-[9px] font-extrabold uppercase tracking-wider block mt-1 w-fit">
+                        <i class="fa-solid fa-fire text-[8px]"></i> PROMO
+                    </span>
+                ` : '';
+
+                return `
+                    <tr class="hover:bg-gray-50/80 transition ${status === 'hidden' ? 'bg-red-50/20' : status === 'out_of_stock' ? 'bg-amber-50/20' : item.isOnSale ? 'bg-amber-50/10' : ''}">
+                        <td class="p-3 text-center">
+                            <img src="${item.image}" alt="${item.name}" class="w-10 h-10 object-contain bg-white border border-gray-200 rounded p-1 mx-auto"
+                                onerror="this.src='https://via.placeholder.com/40?text=Erro';">
+                        </td>
+                        <td class="p-3">
+                            <p class="font-bold text-gray-800 text-xs">${item.name}</p>
+                            <p class="text-[10px] text-gray-500">${item.subtitle}</p>
+                        </td>
+                        <td class="p-3">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-0.5 rounded text-[10px] uppercase font-semibold">
+                                ${item.category === 'perfumes' ? 'Perfumes' : item.category === 'sprays' ? 'Body Sprays' : 'Hidratantes'}
+                            </span>
+                        </td>
+                        <td class="p-3">
+                            <span class="bg-brand-dark/10 text-brand-dark px-2 py-0.5 rounded text-[10px] font-bold uppercase">
+                                ${item.badge || 'Padrão'}
+                            </span>
+                            ${promoBadgeHtml}
+                        </td>
+                        <td class="p-3">
+                            ${statusBadge}
+                        </td>
+                        <td class="p-3 font-bold text-gray-900">
+                            ${priceDisplay}
+                        </td>
+                        <td class="p-3 text-center">
+                            <div class="flex items-center justify-center gap-1.5">
+                                <button onclick="toggleProductPromotion(${item.id})" title="Ativar/Desativar Promoção" class="p-1.5 ${item.isOnSale ? 'bg-amber-500 text-white' : 'bg-gray-100 text-gray-400 hover:bg-gray-200'} rounded transition text-xs">
+                                    <i class="fa-solid fa-tag"></i>
+                                </button>
+                                <button onclick="toggleProductStatus(${item.id})" title="Alternar Status (Disponível -> Sem Estoque -> Oculto)" class="p-1.5 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded transition text-xs">
+                                    <i class="fa-solid fa-rotate"></i>
+                                </button>
+                                <button onclick="editProduct(${item.id})" title="Editar" class="p-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded transition">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                                <button onclick="deleteProduct(${item.id})" title="Excluir" class="p-1.5 bg-red-50 text-red-600 hover:bg-red-100 rounded transition">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function toggleProductPromotion(id) {
+            const p = adminProducts.find(item => item.id === id);
+            if (!p) return;
+
+            p.isOnSale = !p.isOnSale;
+            if (p.isOnSale && (!p.originalPrice || p.originalPrice <= p.price)) {
+                p.originalPrice = Math.round((p.price * 1.25) * 100) / 100;
+            }
+            renderAdminTable(adminProducts);
+        }
+
+        function toggleProductStatus(id) {
+            const p = adminProducts.find(item => item.id === id);
+            if (!p) return;
+
+            const current = p.status || 'available';
+            let nextStatus = 'available';
+            if (current === 'available') nextStatus = 'out_of_stock';
+            else if (current === 'out_of_stock') nextStatus = 'hidden';
+            else nextStatus = 'available';
+
+            p.status = nextStatus;
+            renderAdminTable(adminProducts);
+        }
+
+        function filterAdminProducts() {
+            const query = document.getElementById('adminSearchInput').value.toLowerCase();
+            const filtered = adminProducts.filter(p => {
+                const statusText = (p.status === 'out_of_stock' ? 'sem estoque' : p.status === 'hidden' ? 'oculto' : 'disponivel');
+                const promoText = p.isOnSale ? 'promo promoção oferta' : '';
+                return p.name.toLowerCase().includes(query) || 
+                       p.subtitle.toLowerCase().includes(query) ||
+                       (p.badge && p.badge.toLowerCase().includes(query)) ||
+                       statusText.includes(query) ||
+                       promoText.includes(query);
+            });
+            renderAdminTable(filtered);
+        }
+
+        function openProductModal(isEdit = false) {
+            const modal = document.getElementById('productModal');
+            document.getElementById('modalTitleText').innerText = isEdit ? 'Editar Produto' : 'Adicionar Produto';
+            if (!isEdit) {
+                document.getElementById('productForm').reset();
+                document.getElementById('editProductId').value = '';
+                document.getElementById('prodStatus').value = 'available';
+                document.getElementById('prodIsOnSale').checked = false;
+                document.getElementById('prodOriginalPrice').value = '';
+                document.getElementById('prodDescription').value = '';
+                document.getElementById('prodDescriptionCount').innerText = '0 / 1000';
+                document.getElementById('descriptionPreview').innerText = 'Nenhuma descrição informada.';
+                document.getElementById('descriptionPreview').classList.add('italic');
+                togglePromoInputDisplay();
+                document.getElementById('imagePreview').src = 'https://via.placeholder.com/80?text=Preview';
+            }
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function updateImagePreview() {
+            const url = document.getElementById('prodImage').value;
+            const preview = document.getElementById('imagePreview');
+            preview.src = url || 'https://via.placeholder.com/80?text=Preview';
+        }
+
+        function editProduct(id) {
+            const p = adminProducts.find(item => item.id === id);
+            if (!p) return;
+
+            document.getElementById('editProductId').value = p.id;
+            document.getElementById('prodName').value = p.name;
+            document.getElementById('prodSubtitle').value = p.subtitle;
+            document.getElementById('prodPrice').value = p.price;
+            document.getElementById('prodCategory').value = p.category;
+            document.getElementById('prodBadge').value = p.badge || '';
+            document.getElementById('prodImage').value = p.image;
+            document.getElementById('prodStatus').value = p.status || 'available';
+            document.getElementById('prodIsOnSale').checked = !!p.isOnSale;
+            document.getElementById('prodOriginalPrice').value = p.originalPrice || '';
+
+            const desc = p.description || '';
+            document.getElementById('prodDescription').value = desc;
+            document.getElementById('prodDescriptionCount').innerText = `${desc.length} / 1000`;
+            const previewEl = document.getElementById('descriptionPreview');
+            if (desc.trim() !== '') {
+                previewEl.innerText = desc;
+                previewEl.classList.remove('italic');
+            } else {
+                previewEl.innerText = 'Nenhuma descrição informada.';
+                previewEl.classList.add('italic');
+            }
+
+            togglePromoInputDisplay();
+            updateImagePreview();
+            openProductModal(true);
+        }
+
+        function deleteProduct(id) {
+            const p = adminProducts.find(item => item.id === id);
+            if (!p) return;
+
+            if (confirm(`Tem certeza que deseja excluir o produto "${p.name}"?`)) {
+                adminProducts = adminProducts.filter(item => item.id !== id);
+                renderAdminTable(adminProducts);
+            }
+        }
+
+        function handleProductSubmit(e) {
+            e.preventDefault();
+
+            const id = document.getElementById('editProductId').value;
+            const name = document.getElementById('prodName').value.trim();
+            const subtitle = document.getElementById('prodSubtitle').value.trim();
+            const price = parseFloat(document.getElementById('prodPrice').value);
+            const category = document.getElementById('prodCategory').value;
+            const badge = document.getElementById('prodBadge').value.trim() || 'Destaque';
+            const image = document.getElementById('prodImage').value.trim();
+            const status = document.getElementById('prodStatus').value;
+            const isOnSale = document.getElementById('prodIsOnSale').checked;
+            const origVal = parseFloat(document.getElementById('prodOriginalPrice').value);
+            const originalPrice = (isOnSale && !isNaN(origVal)) ? origVal : null;
+            const description = document.getElementById('prodDescription').value.trim().slice(0, 1000);
+
+            if (id) {
+                // Editar existente
+                const index = adminProducts.findIndex(p => p.id == id);
+                if (index !== -1) {
+                    adminProducts[index] = { id: parseInt(id), name, subtitle, category, badge, price, image, status, isOnSale, originalPrice, description };
+                }
+            } else {
+                // Adicionar novo
+                const maxId = adminProducts.reduce((max, item) => item.id > max ? item.id : max, 0);
+                adminProducts.push({ id: maxId + 1, name, subtitle, category, badge, price, image, status, isOnSale, originalPrice, description });
+            }
+
+            renderAdminTable(adminProducts);
+            closeProductModal();
+        }
+
+        function updateDescriptionPreview() {
+            const val = document.getElementById('prodDescription').value;
+            const countEl = document.getElementById('prodDescriptionCount');
+            const previewEl = document.getElementById('descriptionPreview');
+
+            countEl.innerText = `${val.length} / 1000`;
+
+            if (val.trim() !== '') {
+                previewEl.innerText = val;
+                previewEl.classList.remove('italic');
+            } else {
+                previewEl.innerText = 'Nenhuma descrição informada.';
+                previewEl.classList.add('italic');
+            }
+        }
+
+        // Modal de Token GitHub
+        function openTokenModal() {
+            document.getElementById('githubTokenInput').value = localStorage.getItem('exato_github_token') || '';
+            document.getElementById('tokenModal').classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeTokenModal() {
+            document.getElementById('tokenModal').classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function saveGitHubToken() {
+            const token = document.getElementById('githubTokenInput').value.trim();
+            if (!token) {
+                alert('Por favor, informe a chave token do GitHub.');
+                return;
+            }
+            localStorage.setItem('exato_github_token', token);
+            closeTokenModal();
+            checkGitHubTokenStatus();
+            alert('Chave salva no seu navegador com sucesso!');
+        }
+
+        // PUBLICAR ALTERAÇÕES (SAlVAR NO SERVIDOR LOCAL OU GITHUB VIA API)
+        async function saveChangesToGitHub() {
+            const saveBtn = document.getElementById('saveBtn');
+            const originalText = saveBtn.innerHTML;
+            saveBtn.disabled = true;
+            saveBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Salvando no Servidor...`;
+
+            // 1. Tentar salvar localmente se o servidor de desenvolvimento estiver ativo
+            if (hasLocalServer) {
+                try {
+                    const localRes = await fetch('/api/save-products', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ products: adminProducts })
+                    });
+                    
+                    if (localRes.ok) {
+                        const data = await localRes.json();
+                        if (data.success) {
+                            alert('✅ Alterações salvas com SUCESSO!\n\nO arquivo de produtos local foi atualizado.');
+                            return;
+                        }
+                    }
+                } catch (err) {
+                    console.log('Falha ao salvar localmente, tentando GitHub como fallback:', err);
+                } finally {
+                    saveBtn.disabled = false;
+                    saveBtn.innerHTML = originalText;
+                }
+            }
+
+            // 2. Fallback para salvar no GitHub
+            const token = localStorage.getItem('exato_github_token');
+            if (!token) {
+                alert('Você precisa configurar sua Chave do GitHub primeiro. Clique no botão "Configurar Chave GitHub".');
+                openTokenModal();
+                saveBtn.disabled = false;
+                saveBtn.innerHTML = originalText;
+                return;
+            }
+
+            saveBtn.disabled = true;
+            saveBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Publicando na Vercel...`;
+
+            try {
+                // Montar arquivo em formato JS
+                const fileContent = `// =================================================================\n` +
+                    `// BANCO DE DADOS DE PRODUTOS E IMAGENS - EXATO ENIGMA\n` +
+                    `// =================================================================\n\n` +
+                    `const products = ${JSON.stringify(adminProducts, null, 4)};\n`;
+
+                const owner = 'joaoz333123';
+                const repo = 'larisite';
+                const path = 'js/products.js';
+
+                // 1. Pegar SHA do arquivo existente
+                const getFileRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!getFileRes.ok) {
+                    throw new Error('Falha ao conectar com o GitHub. Verifique se o seu Token está correto e tem permissão de leitura/escrita no repositório.');
+                }
+
+                const fileData = await getFileRes.json();
+                const sha = fileData.sha;
+
+                // 2. Atualizar conteúdo no GitHub
+                const updateRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: 'Atualização de produtos via Painel Admin',
+                        content: btoa(unescape(encodeURIComponent(fileContent))),
+                        sha: sha
+                    })
+                });
+
+                if (!updateRes.ok) {
+                    throw new Error('Não foi possível salvar as alterações no GitHub.');
+                }
+
+                alert('✅ Alterações publicadas com SUCESSO!\n\nA Vercel já está atualizando o site online. Aguarde cerca de 15 segundos para atualizar a página principal!');
+
+            } catch (err) {
+                alert('❌ Erro: ' + err.message);
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.innerHTML = originalText;
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin | Exato Enigma</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1c131a',
+                            gold: '#d4af37',
+                            goldHover: '#b89628',
+                            accent: '#f3e8ee',
+                            cardBg: '#ffffff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header Admin -->
+    <header class="bg-brand-dark text-white border-b border-gray-800 sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="text-xl font-extrabold uppercase tracking-wider">
+                    Exato <span class="text-brand-gold">Enigma</span>
+                </span>
+                <span class="bg-brand-gold/20 text-brand-gold text-xs px-2.5 py-0.5 rounded-full font-semibold border border-brand-gold/30">
+                    Painel Administrativo
+                </span>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+                <a href="index.html" target="_blank" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-1">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Site
+                </a>
+                <button onclick="openTokenModal()" class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-key text-brand-gold"></i> Configurar Chave GitHub
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-6">
+
+        <!-- Banner de Status de Conexão -->
+        <div id="statusBanner" class="bg-amber-50 border border-amber-200 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-amber-800">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-triangle-exclamation text-amber-500 text-xl"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Chave do GitHub não configurada</h4>
+                    <p class="text-xs text-amber-700">Configure sua Chave (Token) para salvar alterações diretamente no site.</p>
+                </div>
+            </div>
+            <button onclick="openTokenModal()" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs px-4 py-2 rounded-lg transition whitespace-nowrap">
+                Inserir Token
+            </button>
+        </div>
+
+        <!-- Barra de Ações Principais -->
+        <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+            <!-- Busca -->
+            <div class="relative flex-1 max-w-md">
+                <input type="text" id="adminSearchInput" oninput="filterAdminProducts()" placeholder="Buscar por produto, categoria ou marca..."
+                    class="w-full bg-gray-50 border border-gray-200 rounded-lg py-2 pl-9 pr-4 text-sm focus:outline-none focus:border-brand-gold">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400 text-xs"></i>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="flex items-center gap-3">
+                <button onclick="openProductModal()" class="bg-brand-dark hover:bg-black text-white font-bold text-xs px-4 py-2.5 rounded-lg flex items-center justify-center gap-2 transition">
+                    <i class="fa-solid fa-plus text-brand-gold"></i> Novo Produto
+                </button>
+                <button onclick="saveChangesToGitHub()" id="saveBtn" class="bg-green-600 hover:bg-green-700 text-white font-bold text-xs px-5 py-2.5 rounded-lg flex items-center justify-center gap-2 transition shadow-md">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> Publicar Alterações no Site
+                </button>
+            </div>
+        </div>
+
+        <!-- Tabela / Lista de Produtos -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="font-bold text-gray-800 text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-boxes-stacked text-brand-gold"></i> Catálogo de Produtos
+                    <span id="productCounter" class="bg-gray-200 text-gray-700 text-xs font-semibold px-2 py-0.5 rounded-full">0</span>
+                </h3>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-xs">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-600 font-semibold border-b border-gray-200 uppercase tracking-wider">
+                            <th class="p-3 w-16 text-center">Foto</th>
+                            <th class="p-3">Nome / Subtítulo</th>
+                            <th class="p-3">Categoria</th>
+                            <th class="p-3">Selo</th>
+                            <th class="p-3">Status</th>
+                            <th class="p-3">Preço (R$)</th>
+                            <th class="p-3 text-center w-32">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminProductsList" class="divide-y divide-gray-100">
+                        <!-- Produtos renderizados via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal Form (Criar/Editar Produto) -->
+    <div id="productModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="bg-brand-dark text-white p-4 flex justify-between items-center">
+                <h3 id="modalTitle" class="font-bold text-base flex items-center gap-2">
+                    <i class="fa-solid fa-box text-brand-gold"></i> <span id="modalTitleText">Adicionar Produto</span>
+                </h3>
+                <button onclick="closeProductModal()" class="text-gray-400 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <form id="productForm" onsubmit="handleProductSubmit(event)" class="p-6 space-y-4 overflow-y-auto">
+                <input type="hidden" id="editProductId">
+
+                <div>
+                    <label class="block font-semibold text-xs text-gray-700 mb-1">Nome do Produto *</label>
+                    <input type="text" id="prodName" required placeholder="Ex: Armaf Club de Nuit Woman" 
+                        class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-brand-gold">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-semibold text-xs text-gray-700 mb-1">Subtítulo / Volume *</label>
+                        <input type="text" id="prodSubtitle" required placeholder="Ex: EDP 105ml" 
+                            class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-brand-gold">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-xs text-gray-700 mb-1">Preço (R$) *</label>
+                        <input type="number" step="0.01" id="prodPrice" required placeholder="450.00" 
+                            class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-brand-gold">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-semibold text-xs text-gray-700 mb-1">Categoria *</label>
+                        <select id="prodCategory" required class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-brand-gold">
+                            <option value="perfumes">Perfumes</option>
+                            <option value="sprays">Body Sprays</option>
+                            <option value="cremes">Hidratantes</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-xs text-gray-700 mb-1">Selo / Destaque</label>
+                        <input type="text" id="prodBadge" placeholder="Ex: Árabe, Feminino, Lançamento" 
+                            class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-brand-gold">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-xs text-gray-700 mb-1">Status no Site *</label>
+                    <select id="prodStatus" required class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-brand-gold">
+                        <option value="available">🟢 Disponível (Visível no site com botão de compra)</option>
+                        <option value="out_of_stock">🟡 Sem Estoque (Visível no site com botão bloqueado)</option>
+                        <option value="hidden">🔴 Oculto do Site (Salvo apenas no Admin)</option>
+                    </select>
+                </div>
+
+                <!-- Promoção -->
+                <div class="p-3 bg-amber-50 rounded-lg border border-amber-200 space-y-2">
+                    <label class="flex items-center gap-2 font-bold text-xs text-amber-900 cursor-pointer">
+                        <input type="checkbox" id="prodIsOnSale" onchange="togglePromoInputDisplay()" class="w-4 h-4 text-amber-600 rounded border-amber-300 focus:ring-amber-500">
+                        <i class="fa-solid fa-fire text-amber-500"></i> Produto em Promoção / Oferta
+                    </label>
+                    <div id="promoPriceContainer" class="hidden pt-1">
+                        <label class="block font-semibold text-xs text-amber-800 mb-1">Preço Normal / Antigo (De R$) *</label>
+                        <input type="number" step="0.01" id="prodOriginalPrice" placeholder="Ex: 499.90 (Preço antes do desconto)" 
+                            class="w-full bg-white border border-amber-300 rounded-lg p-2 text-xs focus:outline-none focus:border-amber-500">
+                        <p class="text-[10px] text-amber-700 mt-1">O valor informado no campo "Preço (R$)" acima será o NOVO preço com desconto.</p>
+                    </div>
+                </div>
+
+                <div>
                     <label class="block font-semibold text-xs text-gray-700 mb-1">URL da Imagem da Foto *</label>
                     <input type="url" id="prodImage" required placeholder="https://..." onchange="updateImagePreview()"
                         class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-brand-gold">
