@@ -54,7 +54,8 @@ SiteLB/
          "badge": "Árabe",
          "price": 79.9,
          "image": "https://...",
-         "status": "available" // "available" | "out_of_stock" | "hidden"
+         "status": "available", // "available" | "out_of_stock" | "hidden"
+         "description": "Uma fragrância fascinante com notas doces e frutadas, perfeita para momentos especiais." // Opcional (máx. 1000 caracteres)
        },
        ...
      ];
